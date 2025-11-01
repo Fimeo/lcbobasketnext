@@ -57,7 +57,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Dark overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-br from-red-900/85 via-black/70 to-red-900/85"></div>
+                <div className="absolute inset-0"></div>
 
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
@@ -129,7 +129,7 @@ export default function HomePage() {
                         viewport={{once: true}}
                         className="text-center mb-12"
                     >
-                        <h2 className="text-red-600 mb-4">Nos Équipes</h2>
+                        <h2 className="text-red-600 mb-4">Classements et résultats</h2>
                         <Link
                             href={PATHS.TEAMS.path}
                             className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors"
@@ -160,7 +160,7 @@ export default function HomePage() {
                                                 className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                                             >
                                                 <div className="flex-1">
-                                                    <p className="text-black mb-1">{rank.team}</p>
+                                                    <p className="text-black mb-1">{rank.teamCode}</p>
                                                     <p className="text-sm text-gray-600">{rank.division}</p>
                                                 </div>
                                                 <div className="flex items-center gap-3">
@@ -213,7 +213,7 @@ export default function HomePage() {
                                                 className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                                             >
                                                 <div className="flex justify-between items-start mb-2">
-                                                    <p className="text-black">{match.team}</p>
+                                                    <p className="text-black">{match.teamCode}</p>
                                                     <Badge variant={match.home ? "default" : "outline"}
                                                            className={match.home ? "bg-red-600 text-white" : ""}>
                                                         {match.home ? "Domicile" : "Extérieur"}
@@ -261,11 +261,13 @@ export default function HomePage() {
                                 <Card className="h-full hover:shadow-xl transition-shadow overflow-hidden">
                                     {item.image && (
                                         <div className="overflow-hidden">
+                                            <Link href={item.link} target="_blank">
                                             <Image
                                                 src={item.image}
                                                 alt={item.title}
                                                 className="w-full h-full object-cover hover:scale-98 rounded-md transition-transform duration-300"
                                             />
+                                            </Link>
                                         </div>
                                     )}
                                     <CardContent className="p-6">
@@ -278,6 +280,16 @@ export default function HomePage() {
                                             <p className="text-black mb-2">{item.location}</p>
                                         )}
                                         {item.description}
+                                        {item.link && (
+                                            <Link
+                                                href={item.link} target="_blank"
+                                                className="inline-flex items-center gap-2 mt-2 text-red-600 hover:text-red-700 transition-colors"
+                                            >
+                                                <span>Voir sur Instagram</span>
+                                                <ExternalLink size={20}/>
+                                            </Link>
+                                        )
+                                        }
                                     </CardContent>
                                 </Card>
                             </motion.div>

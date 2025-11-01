@@ -8,6 +8,7 @@ export function NEWS() {
             title: "Octobre rose",
             date: "Dimanche 26 octobre 2025",
             image: news20251017,
+            link: "https://www.instagram.com/p/DQREMBwgDjo/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==",
             location: GENERAL_INFO.address,
             description: <div>
                 <p>🎀 Le dimanche 26 octobre, nous organisons une après-midi spéciale Octobre Rose 💕</p>
@@ -37,6 +38,7 @@ export function NEWS() {
             title: "Halloween Camp",
             date: "Du 20 au 24 octobre",
             image: news20250923,
+            link: "https://www.instagram.com/p/DO8M2r5iHTY/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==",
             location: GENERAL_INFO.address,
             description: <div>
                 <p>Le club organise un stage pendant les vacances de la Toussaint, du 20 au 24 octobre.🎃</p>

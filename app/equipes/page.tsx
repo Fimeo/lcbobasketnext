@@ -3,129 +3,10 @@
 import {motion} from "motion/react";
 import {Calendar, ExternalLink, MapPin} from "lucide-react";
 import {Badge} from "@/components/ui/badge";
-import teamWhite from "@/assets/images/33410bc9d885a3076cf9982e6d01ad10ab906fe8.png";
 import {FFBB_LINKS} from "@/data/ffbb";
 import {GENERAL_INFO} from "@/data/const";
+import {SENIORS_TEAMS, YOUTH_TEAMS} from "@/data/teams";
 import Image from 'next/image';
-
-const seniorTeams = [
-    {
-        name: "Pré nationale féminine",
-        division: "PNF",
-        engagementID: "200000005143555",
-        pouleId: "200000003018387",
-        image: teamWhite,
-        position: "1er",
-        nextMatch: {
-            opponent: "Hérouville BC",
-            date: "Dim 13 Oct - 15h00",
-            home: true,
-        },
-    },
-    {
-        name: "Pré nationale masculine",
-        division: "PNM",
-        engagementID: "200000005143527",
-        pouleId: "200000003018384",
-        image: teamWhite,
-        position: "2ème",
-        nextMatch: {
-            opponent: "Hérouville BC",
-            date: "Dim 13 Oct - 15h00",
-            home: true,
-        },
-    },
-    {
-        name: "Régionale féminine seniors - Division 2",
-        division: "RF2",
-        engagementID: "200000005179810",
-        pouleId: "200000003023367",
-        image: teamWhite,
-        position: "5ème",
-        nextMatch: {
-            opponent: "Hérouville BC",
-            date: "Dim 13 Oct - 15h00",
-            home: true,
-        },
-    },
-    {
-        name: "Départementale masculine seniors - Division 2",
-        division: "DM2",
-        engagementID: "200000005153966",
-        pouleId: "200000003019809",
-        image: teamWhite,
-        position: "5ème",
-        nextMatch: {
-            opponent: "Hérouville BC",
-            date: "Dim 13 Oct - 15h00",
-            home: true,
-        },
-    },
-    {
-        name: "Régionale masculine seniors - Division 3",
-        division: "RM3",
-        engagementID: "200000005146818",
-        pouleId: "200000003018873",
-        image: teamWhite,
-        position: "1er",
-        nextMatch: {
-            opponent: "Hérouville BC",
-            date: "Dim 13 Oct - 15h00",
-            home: true,
-        },
-    },
-];
-
-const youthTeams = [
-    {
-        category: "U13 - U18",
-        teams: [
-            {
-                name: "Régionale masculine U18",
-                division: "RMU18",
-                engagementID: "200000005191706",
-                pouleId: "200000003025071",
-                image: teamWhite,
-                position: "4ème",
-            },
-            {
-                name: "Régionale féminine U15",
-                division: "RFU15",
-                engagementID: "200000005198886",
-                pouleId: "200000003026059",
-                image: teamWhite,
-                ranking: "3ème",
-            },
-            {
-                name: "Régionale masculine U13",
-                division: "RMU13",
-                engagementID: "200000005191633",
-                pouleId: "200000003025061",
-                image: teamWhite,
-                position: "6ème",
-            }
-        ],
-    },
-    {
-        category: "École de Basket (U13 et moins)",
-        teams: [
-            {
-                name: "Départementale féminine U9",
-                division: "DFU9",
-                image: teamWhite,
-                pouleId: "200000003027255",
-                engagementID: "200000005207609"
-            },
-            {
-                name: "Départementale masculine U9",
-                division: "DMU9",
-                image: teamWhite,
-                pouleId: "200000003027293",
-                engagementID: "200000005207864"
-            },
-        ],
-    },
-];
 
 export default function TeamsPage() {
     return (
@@ -155,7 +36,7 @@ export default function TeamsPage() {
                 >
                     <h2 className="mb-8 text-red-600">Équipes Seniors</h2>
                     <div className="space-y-8">
-                        {seniorTeams.map((team, index) => (
+                        {SENIORS_TEAMS.map((team, index) => (
                             <motion.div
                                 key={index}
                                 initial={{x: index % 2 === 0 ? -30 : 30, opacity: 0}}
@@ -238,7 +119,7 @@ export default function TeamsPage() {
                 >
                     <h2 className="mb-8 text-red-600">Équipes Jeunes</h2>
 
-                    {youthTeams.map((category, categoryIndex) => (
+                    {YOUTH_TEAMS.map((category, categoryIndex) => (
                         <div key={categoryIndex} className="mb-12">
                             <h3 className="text-black mb-6">{category.category}</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
