@@ -1,10 +1,23 @@
 import news20251017 from '@/assets/images/news/news20251017.jpeg';
 import news20250923 from '@/assets/images/news/news20250923.jpeg';
 import {GENERAL_INFO} from "@/data/const";
+import {StaticImageData} from "next/image";
+import {ReactElement} from "react";
 
-export function NEWS() {
+export type News = {
+    slug: string;
+    title: string;
+    date: string;
+    image: StaticImageData;
+    link: string;
+    location: string;
+    description: ReactElement;
+}
+
+export function NEWS(): News[] {
     return [
         {
+            slug: "octobre-rose-2025",
             title: "Octobre rose",
             date: "Dimanche 26 octobre 2025",
             image: news20251017,
@@ -15,8 +28,8 @@ export function NEWS() {
 
                 <p>Nos équipes féminines joueront à domicile au profit du Collectif Triplettes Roses, association qui
                     lutte contre le cancer du sein triple négatif.</p>
-                <p className="mt-2">🕑 Régionale 2 (SF2) – 14h00 : LCBO 🆚 Équeurdreville</p>
-                <p className="mb-2">🕓 Pré-nationale (SF1) – 16h00 : LCBO 🆚 Caen Nord</p>
+                <p>🕑 Régionale 2 (SF2) – 14h00 : LCBO 🆚 Équeurdreville</p>
+                <p>🕓 Pré-nationale (SF1) – 16h00 : LCBO 🆚 Caen Nord</p>
                 <p>🍰 Il y aura une vente de crêpes, gâteaux et boissons dont l’intégralité des bénéfices sera reversée à
                     l’association</p>
 
@@ -25,8 +38,7 @@ export function NEWS() {
                         <a
                             href="https://www.helloasso.com/associations/lcbo-basket/formulaires/1"
                             target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-pink-300 hover:text-red-600 transition-colors"> https://www.helloasso.com/associations/lcbo-basket/formulaires/1
+                            rel="noopener noreferrer"> https://www.helloasso.com/associations/lcbo-basket/formulaires/1
                         </a> (une boite à dons sera également à disposition sur place)
                     </span>
                 </p>
@@ -35,6 +47,7 @@ export function NEWS() {
             </div>
         },
         {
+            slug: "halloween-camp-2025",
             title: "Halloween Camp",
             date: "Du 20 au 24 octobre",
             image: news20250923,
@@ -60,8 +73,7 @@ export function NEWS() {
                     <a
                         href="https://www.helloasso.com/associations/lcbo-basket/evenements/halloween-camp-2025"
                         target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-red-300 hover:text-red-600 transition-colors"> https://www.helloasso.com/associations/lcbo-basket/evenements/halloween-camp-2025
+                        rel="noopener noreferrer"> https://www.helloasso.com/associations/lcbo-basket/evenements/halloween-camp-2025
                     </a>
 
                 </p>

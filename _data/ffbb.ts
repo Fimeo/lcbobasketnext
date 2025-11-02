@@ -3,89 +3,108 @@ export const FFBB_LINKS = {
     "lbcodetailequipe": "https://competitions.ffbb.com/ligues/nor/comites/0014/clubs/nor0014042/equipes/"
 }
 
-export const FFBB = {
-    "upcomingMatches": [
+export type TypeUpcomingMatch = {
+    team: string;
+    teamCode: string;
+    opponent: string;
+    date: string;
+    time: string;
+    home: boolean;
+}
+
+export function UpcomingMatchesByDate(): Record<string, TypeUpcomingMatch[]> {
+    return UpcomingMatches().reduce((acc, match) => {
+        (acc[match.date] ||= []).push(match);
+        return acc;
+    }, {} as Record<string, TypeUpcomingMatch[]>);
+}
+
+export function UpcomingMatches(): TypeUpcomingMatch[] {
+    return [
         {
-            "team": "Régionale masculine seniors - Division 3",
-            "teamCode": "RM3",
-            "opponent": "U.S. T. BASKET EQUEURDREVILLE",
-            "date": "Sam 18 Oct",
-            "time": "20h00",
-            "home": true
+            team: "Régionale masculine seniors - Division 3",
+            teamCode: "RM3",
+            opponent: "U.S. T. BASKET EQUEURDREVILLE",
+            date: "Sam 18 Oct",
+            time: "20h00",
+            home: true
         },
         {
-            "team": "Régionale masculine seniors - Division 3",
-            "teamCode": "RM3",
-            "opponent": "AJS OUISTREHAM",
-            "date": "Ven 24 Oct",
-            "time": "21h00",
-            "home": false
+            team: "Régionale masculine seniors - Division 3",
+            teamCode: "RM3",
+            opponent: "AJS OUISTREHAM",
+            date: "Ven 24 Oct",
+            time: "21h00",
+            home: false
         },
         {
-            "team": "Pré nationale masculine",
-            "teamCode": "PNM",
-            "opponent": "CAEN NORD BASKET - 1",
-            "date": "Sam 25 Oct",
-            "time": "20h00",
-            "home": false
+            team: "Pré nationale masculine",
+            teamCode: "PNM",
+            opponent: "CAEN NORD BASKET - 1",
+            date: "Sam 25 Oct",
+            time: "20h00",
+            home: false
         },
         {
-            "team": "Pré nationale masculine",
-            "teamCode": "PNM",
-            "opponent": "GRANVILLE BASKET CLUB",
-            "date": "Sam 25 Oct",
-            "time": "20h00",
-            "home": true
+            team: "Pré nationale masculine",
+            teamCode: "PNM",
+            opponent: "GRANVILLE BASKET CLUB",
+            date: "Sam 25 Oct",
+            time: "20h00",
+            home: true
         },
         {
-            "team": "Régionale masculine seniors - Division 3",
-            "teamCode": "RM3",
-            "opponent": "US SOLIDAIRE AMICALE 14 BASKET",
-            "date": "Sam 25 Oct",
-            "time": "18h00",
-            "home": true
+            team: "Régionale masculine seniors - Division 3",
+            teamCode: "RM3",
+            opponent: "US SOLIDAIRE AMICALE 14 BASKET",
+            date: "Sam 25 Oct",
+            time: "18h00",
+            home: true
         },
         {
-            "team": "Régionale masculine seniors - Division 3",
-            "teamCode": "RM3",
-            "opponent": "U.S. T. BASKET EQUEURDREVILLE",
-            "date": "Sam 25 Oct",
-            "time": "18h00",
-            "home": false
+            team: "Régionale masculine seniors - Division 3",
+            teamCode: "RM3",
+            opponent: "U.S. T. BASKET EQUEURDREVILLE",
+            date: "Sam 25 Oct",
+            time: "18h00",
+            home: false
         },
         {
-            "team": "Régionale masculine seniors - Division 3",
-            "teamCode": "RM3",
-            "opponent": "CLUB SPORTIF  VESPIERE  ORBEC BASKET-BALL",
-            "date": "Sam 25 Oct",
-            "time": "20h00",
-            "home": false
+            team: "Régionale masculine seniors - Division 3",
+            teamCode: "RM3",
+            opponent: "CLUB SPORTIF  VESPIERE  ORBEC BASKET-BALL",
+            date: "Sam 25 Oct",
+            time: "20h00",
+            home: false
         },
         {
-            "team": "Régionale masculine seniors - Division 3",
-            "teamCode": "RM3",
-            "opponent": "BASKET FLERS SAINT GEORGES",
-            "date": "Sam 25 Oct",
-            "time": "20h00",
-            "home": false
+            team: "Régionale masculine seniors - Division 3",
+            teamCode: "RM3",
+            opponent: "BASKET FLERS SAINT GEORGES",
+            date: "Sam 25 Oct",
+            time: "20h00",
+            home: false
         },
         {
-            "team": "Régionale masculine seniors - Division 3",
-            "teamCode": "RM3",
-            "opponent": "BASKET BALL FERTOIS",
-            "date": "Sam 25 Oct",
-            "time": "20h00",
-            "home": false
+            team: "Régionale masculine seniors - Division 3",
+            teamCode: "RM3",
+            opponent: "BASKET BALL FERTOIS",
+            date: "Sam 25 Oct",
+            time: "20h00",
+            home: false
         },
         {
-            "team": "Pré nationale féminine",
-            "teamCode": "PNF",
-            "opponent": "CABOURG BASKET",
-            "date": "Dim 26 Oct",
-            "time": "16h00",
-            "home": false
+            team: "Pré nationale féminine",
+            teamCode: "PNF",
+            opponent: "CABOURG BASKET",
+            date: "Dim 26 Oct",
+            time: "16h00",
+            home: false
         }
-    ],
+    ]
+}
+
+export const FFBB = {
     "lastMatches": [
         {
             "team": "Pré nationale féminine",

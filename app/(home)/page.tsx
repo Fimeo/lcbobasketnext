@@ -12,9 +12,10 @@ import teamFemale from "@/assets/images/90b46e3c499205bcfacf092af5cc74d1d49d6dc2
 import teamRed from "@/assets/images/e7353762a053488b29a711785b45c60f2350fa31.png";
 
 import {GENERAL_INFO, SOCIAL_LINKS} from "@/data/const";
-import {FFBB, FFBB_LINKS} from "@/data/ffbb";
+import {FFBB, FFBB_LINKS, UpcomingMatchesByDate} from "@/data/ffbb";
 import {NEWS} from "@/data/news";
 import {PATHS} from "@/data/routes";
+import NewsCard from "@/components/actu/NewsCard";
 
 const stats = [
     {icon: Users, label: "Licenciés", value: GENERAL_INFO.licenceNumber},
@@ -157,25 +158,27 @@ export default function HomePage() {
                                         {FFBB.rankings.map((rank, index) => (
                                             <div
                                                 key={index}
-                                                className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                                                className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                                             >
-                                                <div className="flex-1">
-                                                    <p className="text-black mb-1">{rank.teamCode}</p>
-                                                    <p className="text-sm text-gray-600">{rank.division}</p>
-                                                </div>
-                                                <div className="flex items-center gap-3">
-                                                    <Badge className="bg-red-600 text-white hover:bg-red-700">
+                                                <div className="flex items-center justify-between mb-1">
+                                                    <div className="flex items-center">
+                                                        <p className="text-black">{rank.teamCode}</p>
+                                                        <a
+                                                            href={FFBB_LINKS.lbcodetailequipe + rank.engagementID}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="text-red-600 hover:text-red-700 text-sm ml-3"
+                                                        >
+                                                            <ExternalLink size={16}/>
+                                                        </a>
+                                                    </div>
+                                                    <Badge className="bg-red-600 text-white hover:bg-red-700 shrink-0">
                                                         {rank.position}
                                                     </Badge>
-                                                    <span className="text-sm text-gray-600">{rank.points}</span>
-                                                    <a
-                                                        href={FFBB_LINKS.lbcodetailequipe + rank.engagementID}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="text-red-600 hover:text-red-700 text-sm"
-                                                    >
-                                                        <ExternalLink size={16}/>
-                                                    </a>
+                                                </div>
+                                                <div className="flex items-center justify-between text-sm text-gray-600">
+                                                    <span>{rank.team}</span>
+                                                    <span>{rank.points}</span>
                                                 </div>
                                             </div>
                                         ))}
@@ -186,7 +189,7 @@ export default function HomePage() {
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 mt-4 text-sm"
                                     >
-                                        <span>Voir sur FFBB</span>
+                                        <span>Voir toutes les stats sur FFBB</span>
                                         <ExternalLink size={16}/>
                                     </a>
                                 </CardContent>
@@ -207,25 +210,33 @@ export default function HomePage() {
                                         Prochains Matchs
                                     </h3>
                                     <div className="space-y-4">
-                                        {FFBB.upcomingMatches.map((match, index) => (
-                                            <div
-                                                key={index}
-                                                className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                                            >
-                                                <div className="flex justify-between items-start mb-2">
-                                                    <p className="text-black">{match.teamCode}</p>
-                                                    <Badge variant={match.home ? "default" : "outline"}
-                                                           className={match.home ? "bg-red-600 text-white" : ""}>
-                                                        {match.home ? "Domicile" : "Extérieur"}
-                                                    </Badge>
-                                                </div>
-                                                <p className="text-sm text-gray-600 mb-1">
-                                                    vs {match.opponent}
-                                                </p>
-                                                <div className="flex items-center gap-3 text-sm text-gray-600">
-                                                    <span>{match.date}</span>
-                                                    <span>•</span>
-                                                    <span>{match.time}</span>
+                                        {/* Group matches by date */}
+                                        {Object.entries(UpcomingMatchesByDate()).map(([date, matches]) => (
+                                            <div key={date}>
+                                                <div className="text-lgtext-gray-800 font-medium mb-2">{date}</div>
+                                                <div className="space-y-2">
+                                                    {matches.map((match, idx) => (
+                                                        <div
+                                                            key={idx}
+                                                            className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                                                        >
+                                                            <div className="flex items-center justify-between mb-1">
+                                                                <div className="flex-1 min-w-0">
+                                                                    <p className="text-black">
+                                                                        {match.teamCode}{" "}
+                                                                        <span className="text-sm text-gray-600">vs {match.opponent}</span>
+                                                                    </p>
+                                                                </div>
+                                                                <Badge
+                                                                    variant={match.home ? "default" : "outline"}
+                                                                    className={`${match.home ? "bg-red-600 text-white" : ""} shrink-0 ml-2`}
+                                                                >
+                                                                    {match.home ? "Dom." : "Ext."}
+                                                                </Badge>
+                                                            </div>
+                                                            <div className="text-sm text-gray-600">{match.time}</div>
+                                                        </div>
+                                                    ))}
                                                 </div>
                                             </div>
                                         ))}
@@ -251,48 +262,7 @@ export default function HomePage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {NEWS().map((item, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{y: 30, opacity: 0}}
-                                whileInView={{y: 0, opacity: 1}}
-                                viewport={{once: true}}
-                                transition={{delay: index * 0.1, duration: 0.5}}
-                            >
-                                <Card className="h-full hover:shadow-xl transition-shadow overflow-hidden">
-                                    {item.image && (
-                                        <div className="overflow-hidden">
-                                            <Link href={item.link} target="_blank">
-                                            <Image
-                                                src={item.image}
-                                                alt={item.title}
-                                                className="w-full h-full object-cover hover:scale-98 rounded-md transition-transform duration-300"
-                                            />
-                                            </Link>
-                                        </div>
-                                    )}
-                                    <CardContent className="p-6">
-                                        <div className="flex items-center gap-2 text-red-600 mb-2">
-                                            <Calendar size={16}/>
-                                            <span className="text-red-600 text-sm">{item.date}</span>
-                                        </div>
-                                        <h3 className="mb-2 text-black">{item.title}</h3>
-                                        {item.location && (
-                                            <p className="text-black mb-2">{item.location}</p>
-                                        )}
-                                        {item.description}
-                                        {item.link && (
-                                            <Link
-                                                href={item.link} target="_blank"
-                                                className="inline-flex items-center gap-2 mt-2 text-red-600 hover:text-red-700 transition-colors"
-                                            >
-                                                <span>Voir sur Instagram</span>
-                                                <ExternalLink size={20}/>
-                                            </Link>
-                                        )
-                                        }
-                                    </CardContent>
-                                </Card>
-                            </motion.div>
+                            <NewsCard key={index} news={item} index={index} />
                         ))}
                     </div>
                 </div>

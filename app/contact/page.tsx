@@ -2,11 +2,7 @@
 
 import {motion} from "motion/react";
 import {Card, CardContent} from "@/components/ui/card";
-import {Input} from "@/components/ui/input";
-import {Textarea} from "@/components/ui/textarea";
-import {Button} from "@/components/ui/button";
 import {Facebook, Instagram, Mail, MapPin} from "lucide-react";
-import {useState} from "react";
 
 import {GENERAL_INFO, SOCIAL_LINKS} from "@/data/const";
 
