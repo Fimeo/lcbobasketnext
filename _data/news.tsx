@@ -1,6 +1,7 @@
 import news20251017 from '@/assets/images/news/news20251017.jpeg';
 import news20250923 from '@/assets/images/news/news20250923.jpeg';
 import news20251102 from '@/assets/images/news/news20251102.jpeg';
+import news20251105 from '@/assets/images/news/news20251105.jpeg';
 import {GENERAL_INFO} from "@/data/const";
 import {StaticImageData} from "next/image";
 import {ReactElement} from "react";
@@ -18,11 +19,42 @@ export type News = {
 export function NEWS(): News[] {
     return [
         {
+            slug: "boutique-ouverte-2025",
+            title: "Ouverture de la boutique",
+            date: "Samedi 15 novembre 2025",
+            link: "https://www.instagram.com/lcbobasket",
+            image: news20251105,
+            location: GENERAL_INFO.address,
+            description: <div>
+                <p>La boutique du LCBO Basket est désormais ouverte !</p>
+
+                <p>Vous pouvez dès maintenant commander la nouvelle collection PUMA aux couleurs du club 😍</p>
+
+                <p>📅 Les commandes sont ouvertes jusqu’au 28 novembre 2025</p>
+                <p>🎁Toutes les commandes seront livrées avant Noël!</p>
+
+                <p>Voici le lien de la boutique (vous pouvez seulement commander en ligne) :
+                    <span>
+                        <a href="https://b1.intersport-boutique-club.fr/2828-LCBOBASKET"
+                           target="_blank"
+                           rel="noopener noreferrer"> https://b1.intersport-boutique-club.fr/2828-LCBOBASKET</a>
+                    </span>
+                </p>
+                ￼
+                <p>Nous vous proposons 2 créneaux au gymnase pour essayer les différents produits :</p>
+                <ul>
+                    <li>Lundi 10 novembre de 17h30 à 19h</li>
+                    <li>Mercredi 19 novembre de 17h à 19h</li>
+                </ul>
+                <p>+ vous pourrez également venir essayer lors de la soirée de présentation des équipes le 15 novembre</p>
+            </div>
+        },
+        {
             slug: "presentation-equipes-2025",
             title: "Présentation des équipes",
             date: "Samedi 15 novembre 2025",
             image: news20251102,
-            link: "https://www.instagram.com/p/DQmoSmZlI4L/?igsh=YWgzeTZmMzQxNGoz",
+            link: "https://www.instagram.com/p/DQmoSmZlI4L",
             location: GENERAL_INFO.address,
             description: <div>
                 <p>Le samedi 15 novembre prochain aura lieu notre soirée de présentation des équipes. 🔴⚪</p>
