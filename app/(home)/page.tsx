@@ -11,11 +11,13 @@ import teamWhite from "@/assets/images/33410bc9d885a3076cf9982e6d01ad10ab906fe8.
 import teamFemale from "@/assets/images/90b46e3c499205bcfacf092af5cc74d1d49d6dc2.png";
 import teamRed from "@/assets/images/e7353762a053488b29a711785b45c60f2350fa31.png";
 
-import {GENERAL_INFO, SOCIAL_LINKS} from "@/data/const";
-import {FFBB, FFBB_LINKS, UpcomingMatchesByDate} from "@/data/ffbb";
+import {FormatShortDate, FormatTime, GENERAL_INFO, SOCIAL_LINKS} from "@/data/const";
+import {FFBB_LINKS, IsHome, PositionLabel, RankingData, Rankings, Rencontre, UpcomingMatchesByDate} from "@/data/ffbb";
 import {NEWS} from "@/data/news";
 import {PATHS} from "@/data/routes";
 import NewsCard from "@/components/actu/NewsCard";
+import {GetSponsors} from "@/data/sponsors";
+import {TeamByEngagementID} from "@/data/teams";
 
 const stats = [
     {icon: Users, label: "Licenciés", value: GENERAL_INFO.licenceNumber},
@@ -131,13 +133,6 @@ export default function HomePage() {
                         className="text-center mb-12"
                     >
                         <h2 className="text-red-600 mb-4">Classements et résultats</h2>
-                        <Link
-                            href={PATHS.TEAMS.path}
-                            className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors"
-                        >
-                            <span>Voir toutes les équipes</span>
-                            <ExternalLink size={20}/>
-                        </Link>
                     </motion.div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
@@ -155,14 +150,14 @@ export default function HomePage() {
                                         Classements
                                     </h3>
                                     <div className="space-y-4">
-                                        {FFBB.rankings.map((rank, index) => (
+                                        {Rankings().map((rank: RankingData, index) => (
                                             <div
                                                 key={index}
                                                 className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                                             >
                                                 <div className="flex items-center justify-between mb-1">
                                                     <div className="flex items-center">
-                                                        <p className="text-black">{rank.teamCode}</p>
+                                                        <p className="text-black">{TeamByEngagementID(rank.engagementID)?.idCompetition.code}</p>
                                                         <a
                                                             href={FFBB_LINKS.lbcodetailequipe + rank.engagementID}
                                                             target="_blank"
@@ -173,17 +168,18 @@ export default function HomePage() {
                                                         </a>
                                                     </div>
                                                     <Badge className="bg-red-600 text-white hover:bg-red-700 shrink-0">
-                                                        {rank.position}
+                                                        {PositionLabel(rank.position)}
                                                     </Badge>
                                                 </div>
-                                                <div className="flex items-center justify-between text-sm text-gray-600">
-                                                    <span>{rank.team}</span>
-                                                    <span>{rank.points}</span>
+                                                <div
+                                                    className="flex items-center justify-between text-sm text-gray-600">
+                                                    <span>{TeamByEngagementID(rank.engagementID)?.idCompetition.nom}</span>
+                                                    <span>{rank.points} pts</span>
                                                 </div>
                                             </div>
                                         ))}
                                     </div>
-                                    <a
+                                    <Link
                                         href={FFBB_LINKS.lcboclub}
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -191,7 +187,7 @@ export default function HomePage() {
                                     >
                                         <span>Voir toutes les stats sur FFBB</span>
                                         <ExternalLink size={16}/>
-                                    </a>
+                                    </Link>
                                 </CardContent>
                             </Card>
                         </motion.div>
@@ -211,11 +207,11 @@ export default function HomePage() {
                                     </h3>
                                     <div className="space-y-4">
                                         {/* Group matches by date */}
-                                        {Object.entries(UpcomingMatchesByDate()).map(([date, matches]) => (
+                                        {Object.entries(UpcomingMatchesByDate()).slice(0,2).map(([date, matches]) => (
                                             <div key={date}>
                                                 <div className="text-lgtext-gray-800 font-medium mb-2">{date}</div>
                                                 <div className="space-y-2">
-                                                    {matches.map((match, idx) => (
+                                                    {matches.map((match: Rencontre, idx) => (
                                                         <div
                                                             key={idx}
                                                             className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
@@ -223,24 +219,36 @@ export default function HomePage() {
                                                             <div className="flex items-center justify-between mb-1">
                                                                 <div className="flex-1 min-w-0">
                                                                     <p className="text-black">
-                                                                        {match.teamCode}{" "}
-                                                                        <span className="text-sm text-gray-600">vs {match.opponent}</span>
+                                                                        {IsHome(match) ?
+                                                                            TeamByEngagementID(match.idEngagementEquipe1.id)?.idCompetition.code :
+                                                                            TeamByEngagementID(match.idEngagementEquipe2.id)?.idCompetition.code}
+                                                                        {" "}
+                                                                        <span
+                                                                            className="text-sm text-gray-600">vs {IsHome(match) ? match.nomEquipe2 : match.nomEquipe1}</span>
                                                                     </p>
                                                                 </div>
                                                                 <Badge
-                                                                    variant={match.home ? "default" : "outline"}
-                                                                    className={`${match.home ? "bg-red-600 text-white" : ""} shrink-0 ml-2`}
+                                                                    variant={IsHome(match) ? "default" : "outline"}
+                                                                    className={`${IsHome(match) ? "bg-red-600 text-white" : ""} shrink-0 ml-2`}
                                                                 >
-                                                                    {match.home ? "Dom." : "Ext."}
+                                                                    {IsHome(match) ? "Dom." : "Ext."}
                                                                 </Badge>
                                                             </div>
-                                                            <div className="text-sm text-gray-600">{match.time}</div>
+                                                            <div
+                                                                className="text-sm text-gray-600">{FormatTime(match.date_rencontre)}</div>
                                                         </div>
                                                     ))}
                                                 </div>
                                             </div>
                                         ))}
                                     </div>
+                                    <Link
+                                        href={PATHS.TEAMS.path}
+                                        className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 mt-4 text-sm"
+                                    >
+                                        <span>Voir toutes les équipes</span>
+                                        <ExternalLink size={20}/>
+                                    </Link>
                                 </CardContent>
                             </Card>
                         </motion.div>
@@ -261,12 +269,52 @@ export default function HomePage() {
                     </motion.h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {NEWS().map((item, index) => (
-                            <NewsCard key={index} news={item} index={index} />
+                        {NEWS().slice(0, 4).map((item, index) => (
+                            <NewsCard key={index} news={item} index={index}/>
                         ))}
                     </div>
                 </div>
             </section>
+
+            {/* Sponsors Section*/}
+            <motion.section
+                initial={{y: 50, opacity: 0}}
+                animate={{y: 0, opacity: 1}}
+                transition={{delay: 0.6, duration: 0.6}}
+                className="py-12 bg-white">
+                <motion.h2
+                    initial={{y: 20, opacity: 0}}
+                    whileInView={{y: 0, opacity: 1}}
+                    viewport={{once: true}}
+                    className="text-center mb-12 text-red-600"
+                >
+                    Sponsors
+                </motion.h2>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap overflow-hidden justify-around">
+                    {GetSponsors().filter((e) => e.website != undefined).map((sponsor, index) => (
+                        <div
+                            key={index}
+                            className="bg-white p-3 rounded-lg hover:scale-105 transition-transform"
+                        >
+                            {sponsor.website ? (
+                                    <Link href={sponsor.website}>
+                                        <Image
+                                            src={sponsor.logo}
+                                            alt={sponsor.name}
+                                            className="h-10 w-20 object-contain opacity-80"
+                                        />
+                                    </Link>
+                                ) :
+                                <Image
+                                    src={sponsor.logo}
+                                    alt={sponsor.name}
+                                    className="h-10 w-20 object-contain opacity-80"
+                                />
+                            }
+                        </div>
+                    ))}
+                </div>
+            </motion.section>
 
             {/* Court Image Section */}
             <motion.section

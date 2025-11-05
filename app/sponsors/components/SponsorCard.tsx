@@ -1,22 +1,13 @@
 import {Card, CardContent} from "@/components/ui/card";
 import {ExternalLink, MapPin, Phone} from "lucide-react";
 import Image from 'next/image'
-import { StaticImageData } from 'next/image'
-
-export type MajorSponsor = {
-    name: string;
-    logo: StaticImageData;
-    description: string;
-    address: string;
-    phone: string;
-    website: string;
-}
+import {SponsorType} from "@/data/sponsors";
 
 type SponsorCardProps = {
-    sponsor: MajorSponsor;
+    sponsor: SponsorType;
 }
 
-export default function SponsorCard({ sponsor }: SponsorCardProps) {
+export default function SponsorCard({sponsor}: SponsorCardProps) {
     return (
         <Card className="h-full hover:shadow-xl transition-shadow overflow-hidden">
             <div className="h-40 bg-gray-100 flex items-center justify-center p-4">

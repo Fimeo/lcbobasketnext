@@ -12,5 +12,25 @@ export const GENERAL_INFO = {
     phone: '06 89 78 30 39',
     licenceNumber: 250,
     teamNumber: TeamNumber(),
-    logo: logo
+    logo: logo,
+    clubCode: 'NOR0014042',
+    clubId: '11402',
 };
+
+export function FormatShortDate(dateInput: Date | string): string {
+    const date = new Date(dateInput);
+    return date.toLocaleDateString('fr-FR', {
+        weekday: 'short',
+        day: 'numeric',
+        month: 'short',
+    }).replace('.', '');
+}
+
+export function FormatTime(dateInput: Date | string): string {
+    const date = new Date(dateInput);
+    return date.toLocaleTimeString('fr-FR', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+    });
+}

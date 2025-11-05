@@ -1,5 +1,6 @@
 import news20251017 from '@/assets/images/news/news20251017.jpeg';
 import news20250923 from '@/assets/images/news/news20250923.jpeg';
+import news20251102 from '@/assets/images/news/news20251102.jpeg';
 import {GENERAL_INFO} from "@/data/const";
 import {StaticImageData} from "next/image";
 import {ReactElement} from "react";
@@ -17,11 +18,41 @@ export type News = {
 export function NEWS(): News[] {
     return [
         {
+            slug: "presentation-equipes-2025",
+            title: "Présentation des équipes",
+            date: "Samedi 15 novembre 2025",
+            image: news20251102,
+            link: "https://www.instagram.com/p/DQmoSmZlI4L/?igsh=YWgzeTZmMzQxNGoz",
+            location: GENERAL_INFO.address,
+            description: <div>
+                <p>Le samedi 15 novembre prochain aura lieu notre soirée de présentation des équipes. 🔴⚪</p>
+
+                <p>La présentation des équipes se déroulera à 20h10 avant le début du match de notre pré-nationale
+                    masculine qui affrontera Ouistreham.</p>
+
+                <p>🥪 Lors de la soirée, il y aura une buvette avec des formules repas.
+                    Si vous souhaitez en prendre, nous vous conseillons de les pré-réserver directement sur Hello asso
+                    (cela vous fera gagner du temps et vous serez sur d&#39;avoir une formule !).
+                    Voici le lien pour les pré-réserver :
+                    <span>
+                        <a href="https://www.helloasso.com/associations/lcbo-basket/evenements/formules-presentation-des-equipes-2025"
+                           target="_blank"
+                           rel="noopener noreferrer"> https://www.helloasso.com/associations/lcbo-basket/evenements/formules-presentation-des-equipes-2025
+                        </a>
+                    </span>
+                </p>
+
+                <p>Il y aura également une tombola avec des lots à gagner (2€ le ticket) 🎁</p>
+
+                <p>Nous comptons sur vous pour être présents lors de la soirée ! 🔥</p>
+            </div>
+        },
+        {
             slug: "octobre-rose-2025",
             title: "Octobre rose",
             date: "Dimanche 26 octobre 2025",
             image: news20251017,
-            link: "https://www.instagram.com/p/DQREMBwgDjo/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==",
+            link: "https://instagram.com/p/DQREMBwgDjo",
             location: GENERAL_INFO.address,
             description: <div>
                 <p>🎀 Le dimanche 26 octobre, nous organisons une après-midi spéciale Octobre Rose 💕</p>
@@ -51,7 +82,7 @@ export function NEWS(): News[] {
             title: "Halloween Camp",
             date: "Du 20 au 24 octobre",
             image: news20250923,
-            link: "https://www.instagram.com/p/DO8M2r5iHTY/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==",
+            link: "https://instagram.com/p/DO8M2r5iHTY",
             location: GENERAL_INFO.address,
             description: <div>
                 <p>Le club organise un stage pendant les vacances de la Toussaint, du 20 au 24 octobre.🎃</p>

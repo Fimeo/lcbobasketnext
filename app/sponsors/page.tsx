@@ -1,7 +1,7 @@
 'use client'
 
 import {motion} from "motion/react";
-import {MAJOR_SPONSORS, OFFICIAL_SPONSORS, SPONSORS} from "@/data/sponsors";
+import {MajorSponsors, OfficialSponsors, OtherSponsors} from "@/data/sponsors";
 import {GENERAL_INFO} from "@/data/const";
 import {Mail} from "lucide-react";
 import SponsorCard from "./components/SponsorCard";
@@ -36,7 +36,7 @@ export default function SponsorsPage() {
                 >
                     <h2 className="mb-8 text-red-600">Partenaires Majeurs</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {MAJOR_SPONSORS.map((sponsor, index) => (
+                        {MajorSponsors().map((sponsor, index) => (
                             <motion.div
                                 key={index}
                                 initial={{scale: 0.95, opacity: 0}}
@@ -60,7 +60,7 @@ export default function SponsorsPage() {
                 >
                     <h2 className="mb-8 text-red-600">Partenaires Officiels</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {OFFICIAL_SPONSORS.map((sponsor, index) => (
+                        {OfficialSponsors().map((sponsor, index) => (
                             <motion.div
                                 key={index}
                                 initial={{y: 20, opacity: 0}}
@@ -84,7 +84,7 @@ export default function SponsorsPage() {
                 >
                     <h2 className="mb-8 text-red-600">Autres Partenaires</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {SPONSORS.map((sponsor, index) => (
+                        {OtherSponsors().map((sponsor, index) => (
                             <motion.div
                                 key={index}
                                 initial={{y: 20, opacity: 0}}

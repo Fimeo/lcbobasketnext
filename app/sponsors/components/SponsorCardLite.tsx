@@ -2,23 +2,13 @@ import {Card, CardContent} from "@/components/ui/card";
 import {ExternalLink, Facebook, MapPin, Phone} from "lucide-react";
 import {GENERAL_INFO} from "@/data/const";
 import Image from 'next/image';
-import { StaticImageData } from 'next/image'
-
-export type Sponsor = {
-    name: string;
-    logo?: StaticImageData;
-    website?: string;
-    category?: string;
-    facebook?: string;
-    phone?: string;
-    address?: string;
-}
+import {SponsorType} from "@/data/sponsors";
 
 type SponsorCardProps = {
-    sponsor: Sponsor;
+    sponsor: SponsorType;
 }
 
-export default function SponsorCardLite({ sponsor }: SponsorCardProps) {
+export default function SponsorCardLite({sponsor}: SponsorCardProps) {
     return (
         <Card className="h-full hover:shadow-xl transition-shadow overflow-hidden gap-1">
             <div className="h-40 bg-gray-100 flex items-center justify-center p-4">

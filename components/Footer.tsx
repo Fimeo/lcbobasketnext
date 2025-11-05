@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import {GENERAL_INFO, SOCIAL_LINKS} from "@/data/const";
-import {MAJOR_SPONSORS} from "@/data/sponsors";
+import {MajorSponsors} from "@/data/sponsors";
 import {PATHS} from "@/data/routes";
 
 export default async function Footer() {
@@ -33,6 +33,14 @@ export default async function Footer() {
                                     className="text-gray-400 hover:text-red-600 transition-colors text-sm"
                                 >
                                     {PATHS.HOME.label}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href={PATHS.ACTUALITE.path}
+                                    className="text-gray-400 hover:text-red-600 transition-colors text-sm"
+                                >
+                                    {PATHS.ACTUALITE.label}
                                 </Link>
                             </li>
                             <li>
@@ -120,16 +128,26 @@ export default async function Footer() {
                 <div className="border-t border-gray-800 pt-8 mb-8">
                     <h4 className="text-white text-center mb-4 text-sm">Nos Partenaires Principaux</h4>
                     <div className="flex flex-wrap justify-center items-center gap-6">
-                        {MAJOR_SPONSORS.map((sponsor, index) => (
+                        {MajorSponsors().map((sponsor, index) => (
                             <div
                                 key={index}
                                 className="bg-white p-3 rounded-lg hover:scale-105 transition-transform"
                             >
-                                <Image
-                                    src={sponsor.logo}
-                                    alt={sponsor.name}
-                                    className="h-10 w-20 object-contain opacity-80"
-                                />
+                                {sponsor.website ? (
+                                    <Link href={sponsor.website}>
+                                        <Image
+                                            src={sponsor.logo}
+                                            alt={sponsor.name}
+                                            className="h-10 w-20 object-contain opacity-80"
+                                        />
+                                    </Link>
+                                ):(
+                                    <Image
+                                        src={sponsor.logo}
+                                        alt={sponsor.name}
+                                        className="h-10 w-20 object-contain opacity-80"
+                                    />
+                                )}
                             </div>
                         ))}
                     </div>
