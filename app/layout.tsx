@@ -5,9 +5,16 @@ import Footer from "@/components/Footer";
 import {Toaster} from "sonner";
 
 export const metadata: Metadata = {
-    title: "LCBO Basket",
-    description: "LCBO Basket",
-};
+    metadataBase: new URL('https://lcbobasket.appro.ovh/'),
+    title: { default: 'LCBO Basket', template: '%s | LCBO Basket' },
+    description: 'LCBO Basket - Passion, Excellence, Esprit d\'Équipe',
+    openGraph: {
+        title: 'LCBO Basket',
+        description: 'LCBO Basket - Passion, Excellence, Esprit d\'Équipe',
+        url: 'https://lcbobasket.appro.ovh/',
+        images: [{ url: 'https://lcbobasket.appro.ovh/logo.png' }]
+    },
+}
 
 export default function RootLayout({
                                        children,
@@ -20,7 +27,6 @@ export default function RootLayout({
             <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
             <link rel="manifest" href="/manifest.json"/>
             <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-            <title>LCBO Basket</title>
         </head>
 
         <body>
