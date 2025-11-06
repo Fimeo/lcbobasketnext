@@ -17,20 +17,17 @@ type TeamPageProps = {
 
 export async function generateMetadata(
     { params }: TeamPageProps,
-    parent: ResolvingMetadata
 ): Promise<Metadata> {
     const { engagement } = await params
 
     const team = TeamByEngagementID(engagement)
     if (!team) return { title: "Équipe introuvable" };
 
-    const previousImages = (await parent).openGraph?.images || []
-
     return {
         title: `${team.idCompetition.code} | Nos équipes`,
         description: `Découvrez les informations sur l’équipe ${team.idCompetition.code}.`,
         openGraph: {
-            images: [teamWhite.src, ...previousImages],
+            images: [teamWhite.src],
         },
     }
 }
