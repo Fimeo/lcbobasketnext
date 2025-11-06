@@ -5,11 +5,12 @@ import teamWhite from "@/assets/images/33410bc9d885a3076cf9982e6d01ad10ab906fe8.
 import {motion} from "motion/react";
 import {Calendar, ExternalLink, MapPin} from "lucide-react";
 import {Badge} from "@/components/ui/badge";
-import {FFBB_LINKS, IsHome, NextMatchByEngagement, PositionLabel, RankingFromEngagement} from "@/data/ffbb";
+import {IsHome, NextMatchByEngagement, PositionLabel, RankingFromEngagement} from "@/data/ffbb";
 import {FormatShortDate, FormatTime, GENERAL_INFO} from "@/data/const";
 import {Engagement, SeniorTeams, YouthTeamsByCategoryReducer} from "@/data/teams";
 
 import Image from 'next/image';
+import Link from "next/link";
 
 export default function TeamsPage() {
     return (
@@ -51,6 +52,9 @@ export default function TeamsPage() {
                                 transition={{duration: 0.6}}
                                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
                             >
+                                <Link
+                                    href={`/equipes/${team.id}`}
+                                >
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
                                     <div className="md:col-span-1 h-64 md:h-auto">
                                         <Image
@@ -98,18 +102,13 @@ export default function TeamsPage() {
                                                 )}
                                             </div>
                                         )}
-
-                                        <a
-                                            href={FFBB_LINKS.lbcodetailequipe + team.id}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors"
-                                        >
-                                            <span>Suivre les stats sur FFBB</span>
+                                        <div className="flex items-center justify-end gap-2 text-red-600 hover:text-red-700 transition-colors">
+                                            <span>Voir les détails</span>
                                             <ExternalLink size={16}/>
-                                        </a>
+                                        </div>
                                     </div>
                                 </div>
+                                </Link>
                             </motion.div>
                         )})}
                     </div>
@@ -139,6 +138,9 @@ export default function TeamsPage() {
                                         transition={{delay: teamIndex * 0.1, duration: 0.5}}
                                         className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
                                     >
+                                        <Link
+                                            href={`/equipes/${team.id}`}
+                                        >
                                         <div className="h-48 overflow-hidden">
                                             <Image
                                                 src={teamWhite}
@@ -148,21 +150,17 @@ export default function TeamsPage() {
                                         </div>
                                         <div className="p-5">
                                             <h4 className="text-black mb-2">{team.idCompetition.nom}</h4>
-                                            <div className="inline-flex items-center gap-2">
-                                                <Badge className="bg-red-600 text-white hover:bg-red-700 mb-3">
+                                            <div className="flex flex-wrap gap-2 justify-between">
+                                                <Badge className="bg-red-600 text-white hover:bg-red-700">
                                                     {team.idCompetition.code}
                                                 </Badge>
-                                                <a
-                                                    href={FFBB_LINKS.lbcodetailequipe + team.id}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors text-sm mb-3"
-                                                >
-                                                    <span>Stats FFBB</span>
-                                                    <ExternalLink size={14}/>
-                                                </a>
+                                                <div className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors">
+                                                    <span>Voir les détails</span>
+                                                    <ExternalLink size={16}/>
+                                                </div>
                                             </div>
                                         </div>
+                                        </Link>
                                     </motion.div>
                                 ))}
                             </div>

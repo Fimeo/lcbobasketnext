@@ -79,13 +79,6 @@ export function NextMatchByEngagement(engagement: string): Rencontre|undefined {
     return Matches().filter((e) => new Date(e.date_rencontre) >= new Date()).find((e) => !e.joue &&(e.idEngagementEquipe1.id === engagement || e.idEngagementEquipe2.id === engagement))
 }
 
-/*
-//if (match.joue) {
-//    matchData.score = isHome
-//        ? `${match.resultatEquipe1}-${match.resultatEquipe2}`
-//        : `${match.resultatEquipe2}-${match.resultatEquipe1}`;
-//}
-//position: `${myClassement.position}${myClassement.position === '1' ? 'er' : 'ème'}`,
-//                         points: `${myClassement.points} pts`,
-
- */
+export function MatchByEngagement(engagement: string): Rencontre[] {
+    return Matches().filter((e) => e.idEngagementEquipe1.id === engagement || e.idEngagementEquipe2.id === engagement)
+}
