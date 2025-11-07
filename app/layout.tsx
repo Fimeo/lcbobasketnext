@@ -40,8 +40,7 @@ export default function RootLayout({
             <Footer/>
             <Toaster/>
         </div>
-        <script defer data-domain="lcbobasket.appro.ovh"
-                src="https://plausible.appro.ovh/js/script.outbound-links.js"></script>
+        <script defer data-domain="lcbobasket.fr" src="https://plausible.appro.ovh/js/script.outbound-links.js"></script>
         </body>
         </html>
     );
