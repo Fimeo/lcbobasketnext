@@ -65,7 +65,5 @@ export function YouthTeamsByCategoryReducer(): Record<string, Engagement[]> {
 }
 
 export function Teams(): Engagement[] {
-    const teams = data.teams as Engagement[]
-    // TODO : seems did not work to ordre team by ordre
-    return teams.sort((a, b) => a.idCompetition.categorie.ordre - b.idCompetition.categorie.ordre)
+    return data.teams.sort((a, b) => b.idCompetition.categorie.ordre - a.idCompetition.categorie.ordre) as Engagement[]
 }

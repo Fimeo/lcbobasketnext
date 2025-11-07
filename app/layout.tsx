@@ -3,6 +3,7 @@ import "./globals.css";
 import Navigation from "../components/Navigation";
 import Footer from "@/components/Footer";
 import {Toaster} from "sonner";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://lcbobasket.appro.ovh/'),
@@ -33,6 +34,7 @@ export default function RootLayout({
         <div className="min-h-screen flex flex-col bg-white">
             <Navigation/>
             <main className="flex-1">
+                <ScrollToTop />
                 {children}
             </main>
             <Footer/>

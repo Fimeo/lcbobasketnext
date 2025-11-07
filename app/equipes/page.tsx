@@ -11,6 +11,7 @@ import {Engagement, SeniorTeams, YouthTeamsByCategoryReducer} from "@/data/teams
 
 import Image from 'next/image';
 import Link from "next/link";
+import {PATHS} from "@/data/routes";
 
 export default function TeamsPage() {
     return (
@@ -139,7 +140,7 @@ export default function TeamsPage() {
                                         className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
                                     >
                                         <Link
-                                            href={`/equipes/${team.id}`}
+                                            href={`${PATHS.TEAMS.path}/${team.id}`}
                                         >
                                         <div className="h-48 overflow-hidden">
                                             <Image

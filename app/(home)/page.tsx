@@ -11,7 +11,7 @@ import teamWhite from "@/assets/images/33410bc9d885a3076cf9982e6d01ad10ab906fe8.
 import teamFemale from "@/assets/images/90b46e3c499205bcfacf092af5cc74d1d49d6dc2.png";
 import teamRed from "@/assets/images/e7353762a053488b29a711785b45c60f2350fa31.png";
 
-import {FormatShortDate, FormatTime, GENERAL_INFO, SOCIAL_LINKS} from "@/data/const";
+import {FormatTime, GENERAL_INFO, SOCIAL_LINKS} from "@/data/const";
 import {FFBB_LINKS, IsHome, PositionLabel, RankingData, Rankings, Rencontre, UpcomingMatchesByDate} from "@/data/ffbb";
 import {NEWS} from "@/data/news";
 import {PATHS} from "@/data/routes";
@@ -80,7 +80,6 @@ export default function HomePage() {
                         <a
                             href={SOCIAL_LINKS.instagram}
                             target="_blank"
-                            rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 bg-white text-red-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-xl"
                         >
                             <Instagram size={20}/>
@@ -151,38 +150,34 @@ export default function HomePage() {
                                     </h3>
                                     <div className="space-y-4">
                                         {Rankings().map((rank: RankingData, index) => (
-                                            <div
+                                            <Link
                                                 key={index}
-                                                className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                                                href={`${PATHS.TEAMS.path}/${rank.engagementID}`}
+                                                className="text-red-600 hover:text-red-700 text-sm ml-3"
                                             >
-                                                <div className="flex items-center justify-between mb-1">
-                                                    <div className="flex items-center">
-                                                        <p className="text-black">{TeamByEngagementID(rank.engagementID)?.idCompetition.code}</p>
-                                                        <a
-                                                            href={FFBB_LINKS.lbcodetailequipe + rank.engagementID}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="text-red-600 hover:text-red-700 text-sm ml-3"
-                                                        >
-                                                            <ExternalLink size={16}/>
-                                                        </a>
-                                                    </div>
-                                                    <Badge className="bg-red-600 text-white hover:bg-red-700 shrink-0">
-                                                        {PositionLabel(rank.position)}
-                                                    </Badge>
-                                                </div>
                                                 <div
-                                                    className="flex items-center justify-between text-sm text-gray-600">
-                                                    <span>{TeamByEngagementID(rank.engagementID)?.idCompetition.nom}</span>
-                                                    <span>{rank.points} pts</span>
+                                                    className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                                                >
+                                                    <div className="flex items-center justify-between mb-1">
+                                                        <div className="flex items-center">
+                                                            <p className="text-black">{TeamByEngagementID(rank.engagementID)?.idCompetition.code}</p>
+                                                        </div>
+                                                        <Badge className="bg-red-600 text-white hover:bg-red-700 shrink-0">
+                                                            {PositionLabel(rank.position)}
+                                                        </Badge>
+                                                    </div>
+                                                    <div
+                                                        className="flex items-center justify-between text-sm text-gray-600">
+                                                        <span>{TeamByEngagementID(rank.engagementID)?.idCompetition.nom}</span>
+                                                        <span>{rank.points} pts</span>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </Link>
                                         ))}
                                     </div>
                                     <Link
-                                        href={FFBB_LINKS.lcboclub}
+                                        href={FFBB_LINKS.club}
                                         target="_blank"
-                                        rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 mt-4 text-sm"
                                     >
                                         <span>Voir toutes les stats sur FFBB</span>

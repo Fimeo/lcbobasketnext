@@ -36,7 +36,6 @@ export default function SponsorCard({sponsor}: SponsorCardProps) {
                     <a
                         href={sponsor.website}
                         target="_blank"
-                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors text-sm"
                     >
                         <span>Visiter le site web</span>

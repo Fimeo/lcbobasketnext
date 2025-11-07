@@ -118,7 +118,6 @@ export default function InfosPage() {
                                         <a
                                             href={`https://www.google.com/maps?q=${gymnase.lat},${gymnase.lng}`}
                                             target="_blank"
-                                            rel="noopener noreferrer"
                                             className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors text-sm"
                                         >
                                             Ouvrir dans Google Maps

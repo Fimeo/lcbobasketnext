@@ -162,9 +162,8 @@ export function TeamDetailComponent({team}: TeamDetailsCardProps) {
                                         </div>
                                         <div className="mt-2">
                                             <Link
-                                                href={FFBB_LINKS.lbcodetailequipe + team.id}
+                                                href={FFBB_LINKS.teamDetail + team.id}
                                                 target="_blank"
-                                                rel="noopener noreferrer"
                                                 className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors text-sm mb-3"
                                             >
                                                 <span>Voir le classement complet sur FFBB</span>

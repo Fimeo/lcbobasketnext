@@ -107,7 +107,6 @@ export default async function Footer() {
                         <a
                             href={SOCIAL_LINKS.instagram}
                             target="_blank"
-                            rel="noopener noreferrer"
                             className="flex items-center gap-2 text-gray-400 hover:text-red-600 transition-colors text-sm mb-4"
                         >
                             <Instagram size={20}/>
@@ -115,7 +114,6 @@ export default async function Footer() {
                         </a>
                         <a href={SOCIAL_LINKS.facebook}
                            target="_blank"
-                           rel="noopener noreferrer"
                            className="flex items-center gap-2 text-gray-400 hover:text-red-600 transition-colors text-sm mb-4"
                         >
                             <Facebook size={20}/>

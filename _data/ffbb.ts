@@ -3,8 +3,8 @@ import data from './ffbb_data.json';
 import {FormatShortDate, GENERAL_INFO} from "@/data/const";
 
 export const FFBB_LINKS = {
-    "lcboclub": "https://competitions.ffbb.com/ligues/nor/comites/0014/clubs/nor0014042",
-    "lbcodetailequipe": "https://competitions.ffbb.com/ligues/nor/comites/0014/clubs/nor0014042/equipes/"
+    club: "https://competitions.ffbb.com/ligues/nor/comites/0014/clubs/nor0014042",
+    teamDetail: "https://competitions.ffbb.com/ligues/nor/comites/0014/clubs/nor0014042/equipes/"
 }
 
 export interface Rencontre {

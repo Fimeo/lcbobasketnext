@@ -36,8 +36,7 @@ export function NEWS(): News[] {
                 <p>Voici le lien de la boutique (vous pouvez seulement commander en ligne) :
                     <span>
                         <a href="https://b1.intersport-boutique-club.fr/2828-LCBOBASKET"
-                           target="_blank"
-                           rel="noopener noreferrer"> https://b1.intersport-boutique-club.fr/2828-LCBOBASKET</a>
+                           target="_blank"> https://b1.intersport-boutique-club.fr/2828-LCBOBASKET</a>
                     </span>
                 </p>
                 ￼
@@ -68,8 +67,7 @@ export function NEWS(): News[] {
                     Voici le lien pour les pré-réserver :
                     <span>
                         <a href="https://www.helloasso.com/associations/lcbo-basket/evenements/formules-presentation-des-equipes-2025"
-                           target="_blank"
-                           rel="noopener noreferrer"> https://www.helloasso.com/associations/lcbo-basket/evenements/formules-presentation-des-equipes-2025
+                           target="_blank"> https://www.helloasso.com/associations/lcbo-basket/evenements/formules-presentation-des-equipes-2025
                         </a>
                     </span>
                 </p>
@@ -100,8 +98,7 @@ export function NEWS(): News[] {
                     <span>
                         <a
                             href="https://www.helloasso.com/associations/lcbo-basket/formulaires/1"
-                            target="_blank"
-                            rel="noopener noreferrer"> https://www.helloasso.com/associations/lcbo-basket/formulaires/1
+                            target="_blank"> https://www.helloasso.com/associations/lcbo-basket/formulaires/1
                         </a> (une boite à dons sera également à disposition sur place)
                     </span>
                 </p>
@@ -135,8 +132,7 @@ export function NEWS(): News[] {
                 <p>Vous pouvez désormais inscrire votre enfant via ce lien helloasso :
                     <a
                         href="https://www.helloasso.com/associations/lcbo-basket/evenements/halloween-camp-2025"
-                        target="_blank"
-                        rel="noopener noreferrer"> https://www.helloasso.com/associations/lcbo-basket/evenements/halloween-camp-2025
+                        target="_blank"> https://www.helloasso.com/associations/lcbo-basket/evenements/halloween-camp-2025
                     </a>
 
                 </p>
