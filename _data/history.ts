@@ -1,6 +1,6 @@
-import lcboneige from "@/assets/images/LCBO-Basket-1972-sous-la-neige.png"
-import lcboneige2 from "@/assets/images/LCBO-Basket-1972-match-dans-la-neige.png"
-import lcbohistoire from "@/assets/images/LCBO_Basket_histoire.jpg"
+import lcboneige from "@/assets/images/history/LCBO-Basket-1972-sous-la-neige.png"
+import lcboneige2 from "@/assets/images/history/LCBO-Basket-1972-match-dans-la-neige.png"
+import lcbohistoire from "@/assets/images/history/LCBO_Basket_histoire.jpg"
 
 export const HistoryPeriods = [
     {

@@ -3,7 +3,7 @@
 import {motion} from "motion/react";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Clock, Euro, ExternalLink, MapPin} from "lucide-react";
-import planningImage from "@/assets/images/planning20252026.jpg"
+import planningImage from "@/assets/images/misc/planning20252026.jpg"
 import {PATHS} from "@/data/routes";
 import {GYMNASES, TARIFS} from "@/data/infos";
 import Link from 'next/link';

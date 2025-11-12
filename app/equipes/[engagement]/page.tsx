@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
-import type {Metadata, ResolvingMetadata} from "next";
-import {Engagement, TeamByEngagementID, Teams} from "@/data/teams";
-import teamWhite from "@/assets/images/33410bc9d885a3076cf9982e6d01ad10ab906fe8.png";
+import type {Metadata} from "next";
+import {Engagement, TeamByEngagementID, TeamPictureByEngagementID, Teams} from "@/data/teams";
 import Link from "next/link";
 import Image from "next/image";
 import {ArrowLeft, ChevronLeft, ChevronRight, ExternalLink, Trophy} from "lucide-react";
@@ -27,7 +26,7 @@ export async function generateMetadata(
         title: `${team.idCompetition.code} | Nos équipes`,
         description: `Découvrez les informations sur l’équipe ${team.idCompetition.code}.`,
         openGraph: {
-            images: [teamWhite.src],
+            images: [TeamPictureByEngagementID(team.id).src],
         },
     }
 }
@@ -57,9 +56,9 @@ export function TeamDetailComponent({team}: TeamDetailsCardProps) {
         <div className="min-h-screen bg-gray-50">
             {/* Version desktop */}
             <div className="hidden md:block overflow-x-auto">
-                <section className="relative h-[100vh] sm:h-[70vh] md:h-[60vh] overflow-hidden">
+                <section className="relative h-[100vh] sm:h-[70vh] lg:h-[70vh] overflow-hidden">
                     <Image
-                        src={teamWhite}
+                        src={TeamPictureByEngagementID(team.id)}
                         alt={team.idCompetition.nom}
                         className="w-full h-full object-cover"
                     />
@@ -87,7 +86,7 @@ export function TeamDetailComponent({team}: TeamDetailsCardProps) {
             <div className="md:hidden space-y-4">
                 <section className="relative overflow-hidden">
                     <Image
-                        src={teamWhite}
+                        src={TeamPictureByEngagementID(team.id)}
                         alt={team.idCompetition.nom}
                         className="w-full h-full object-cover"
                     />

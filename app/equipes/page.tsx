@@ -1,13 +1,11 @@
 'use client'
 
-import teamWhite from "@/assets/images/33410bc9d885a3076cf9982e6d01ad10ab906fe8.png";
-
 import {motion} from "motion/react";
 import {Calendar, ExternalLink, MapPin} from "lucide-react";
 import {Badge} from "@/components/ui/badge";
 import {IsHome, NextMatchByEngagement, PositionLabel, RankingFromEngagement} from "@/data/ffbb";
 import {FormatShortDate, FormatTime, GENERAL_INFO} from "@/data/const";
-import {Engagement, SeniorTeams, YouthTeamsByCategoryReducer} from "@/data/teams";
+import {Engagement, SeniorTeams, TeamPictureByEngagementID, YouthTeamsByCategoryReducer} from "@/data/teams";
 
 import Image from 'next/image';
 import Link from "next/link";
@@ -59,7 +57,7 @@ export default function TeamsPage() {
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
                                     <div className="md:col-span-1 h-64 md:h-auto">
                                         <Image
-                                            src={teamWhite}
+                                            src={TeamPictureByEngagementID(team.id)}
                                             alt={team.idCompetition.nom}
                                             className="w-full h-full object-cover"
                                         />
@@ -144,7 +142,7 @@ export default function TeamsPage() {
                                         >
                                         <div className="h-48 overflow-hidden">
                                             <Image
-                                                src={teamWhite}
+                                                src={TeamPictureByEngagementID(team.id)}
                                                 alt={team.idCompetition.nom}
                                                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                                             />

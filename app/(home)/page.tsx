@@ -6,10 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {Card, CardContent} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
-import courtImage from "@/assets/images/8d37ddb376b97fb051abd9bdd74bc88ce72494c7.png";
-import teamWhite from "@/assets/images/33410bc9d885a3076cf9982e6d01ad10ab906fe8.png";
-import teamFemale from "@/assets/images/90b46e3c499205bcfacf092af5cc74d1d49d6dc2.png";
-import teamRed from "@/assets/images/e7353762a053488b29a711785b45c60f2350fa31.png";
+import courtImage from "@/assets/images/misc/terrain.png";
 
 import {FormatTime, GENERAL_INFO, SOCIAL_LINKS} from "@/data/const";
 import {FFBB_LINKS, IsHome, PositionLabel, RankingData, Rankings, Rencontre, UpcomingMatchesByDate} from "@/data/ffbb";
@@ -17,7 +14,7 @@ import {NEWS} from "@/data/news";
 import {PATHS} from "@/data/routes";
 import NewsCard from "@/components/actu/NewsCard";
 import {GetSponsors} from "@/data/sponsors";
-import {TeamByEngagementID} from "@/data/teams";
+import {TeamByEngagementID, TeamPictureByEngagementID} from "@/data/teams";
 
 const stats = [
     {icon: Users, label: "Licenciés", value: GENERAL_INFO.licenceNumber},
@@ -35,32 +32,33 @@ export default function HomePage() {
                 className="relative text-white py-20 md:py-32 overflow-hidden"
             >
                 {/* Background images collage */}
-                <div className="absolute inset-0 grid grid-cols-3">
+                <div className="absolute inset-0 grid grid-cols-2">
                     <div className="relative overflow-hidden">
                         <Image
-                            src={teamWhite}
+                            src={TeamPictureByEngagementID("200000005143527")}
                             alt="LCBO Team"
                             className="w-full h-full object-cover"
                         />
                     </div>
                     <div className="relative overflow-hidden">
                         <Image
-                            src={teamFemale}
+                            src={TeamPictureByEngagementID("200000005143555")}
                             alt="LCBO Team"
                             className="w-full h-full object-cover"
                         />
                     </div>
-                    <div className="relative overflow-hidden">
+                    {/*<div className="relative overflow-hidden">
                         <Image
-                            src={teamRed}
+                            src={TeamPictureByEngagementID("200000005146818")}
                             alt="LCBO Team"
                             className="w-full h-full object-cover"
                         />
                     </div>
+                    */}
                 </div>
 
                 {/* Dark overlay for text readability */}
-                <div className="absolute inset-0"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-black-900/90 via-black/20 to-black-900/90"></div>
 
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
