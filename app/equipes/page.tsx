@@ -18,7 +18,7 @@ export default function TeamsPage() {
                 <motion.div
                     initial={{y: -20, opacity: 0}}
                     animate={{y: 0, opacity: 1}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.4}}
                     className="text-center mb-12"
                 >
                     <h1 className="mb-4 text-red-600">Nos Équipes</h1>
@@ -34,7 +34,7 @@ export default function TeamsPage() {
                     initial={{y: 30, opacity: 0}}
                     whileInView={{y: 0, opacity: 1}}
                     viewport={{once: true}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.4}}
                     className="mb-16"
                 >
                     <h2 className="mb-8 text-red-600">Équipes Seniors</h2>
@@ -48,7 +48,7 @@ export default function TeamsPage() {
                                 initial={{x: index % 2 === 0 ? -30 : 30, opacity: 0}}
                                 whileInView={{x: 0, opacity: 1}}
                                 viewport={{once: true}}
-                                transition={{duration: 0.6}}
+                                transition={{duration: 0.4}}
                                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
                             >
                                 <Link
@@ -118,7 +118,7 @@ export default function TeamsPage() {
                     initial={{y: 30, opacity: 0}}
                     whileInView={{y: 0, opacity: 1}}
                     viewport={{once: true}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.2}}
                     className="mb-16"
                 >
                     <h2 className="mb-8 text-red-600">Équipes Jeunes</h2>
@@ -172,7 +172,7 @@ export default function TeamsPage() {
                     initial={{y: 20, opacity: 0}}
                     whileInView={{y: 0, opacity: 1}}
                     viewport={{once: true}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.2}}
                     className="bg-gradient-to-br from-red-600 to-red-800 text-white p-8 md:p-12 rounded-lg shadow-xl text-center"
                 >
                     <h2 className="text-white mb-4">Rejoignez-nous !</h2>

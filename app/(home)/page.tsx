@@ -29,11 +29,32 @@ export default function HomePage() {
             <motion.section
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
-                transition={{duration: 0.8}}
+                transition={{duration: 0.4}}
                 className="relative text-white py-20 md:py-32 overflow-hidden"
             >
-                {/* Background images collage */}
-                <div className="absolute inset-0 grid grid-cols-2">
+
+                {/* Version desktop */}
+                <div className="hidden md:block">
+                    <div className="grid absolute inset-0 grid-cols-2">
+                        <div className="relative overflow-hidden">
+                            <Image
+                                src={TeamPictureByEngagementID("200000005143527")}
+                                alt="LCBO Team"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div className="relative overflow-hidden">
+                            <Image
+                                src={TeamPictureByEngagementID("200000005143555")}
+                                alt="LCBO Team"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                {/* Version mobile */}
+                <div className="md:hidden absolute inset-0 grid grid-cols-1">
                     <div className="relative overflow-hidden">
                         <Image
                             src={TeamPictureByEngagementID("200000005143527")}
@@ -41,21 +62,6 @@ export default function HomePage() {
                             className="w-full h-full object-cover"
                         />
                     </div>
-                    <div className="relative overflow-hidden">
-                        <Image
-                            src={TeamPictureByEngagementID("200000005143555")}
-                            alt="LCBO Team"
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
-                    {/*<div className="relative overflow-hidden">
-                        <Image
-                            src={TeamPictureByEngagementID("200000005146818")}
-                            alt="LCBO Team"
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
-                    */}
                 </div>
 
                 {/* Dark overlay for text readability */}
@@ -139,7 +145,7 @@ export default function HomePage() {
                             initial={{x: -30, opacity: 0}}
                             whileInView={{x: 0, opacity: 1}}
                             viewport={{once: true}}
-                            transition={{duration: 0.6}}
+                            transition={{duration: 0.2}}
                         >
                             <Card>
                                 <CardContent className="p-6">
@@ -148,7 +154,7 @@ export default function HomePage() {
                                         Classements
                                     </h3>
                                     <div className="space-y-4">
-                                        {Rankings().map((rank: RankingData, index) => (
+                                        {Rankings().slice(0, 5).map((rank: RankingData, index) => (
                                             <Link
                                                 key={index}
                                                 href={`${PATHS.TEAMS.path}/${rank.engagementID}`}
@@ -191,7 +197,7 @@ export default function HomePage() {
                             initial={{x: 30, opacity: 0}}
                             whileInView={{x: 0, opacity: 1}}
                             viewport={{once: true}}
-                            transition={{duration: 0.6}}
+                            transition={{duration: 0.2}}
                         >
                             <Card>
                                 <CardContent className="p-6">
@@ -201,11 +207,11 @@ export default function HomePage() {
                                     </h3>
                                     <div className="space-y-4">
                                         {/* Group matches by date */}
-                                        {Object.entries(UpcomingMatchesByDate()).slice(0,2).map(([date, matches]) => (
+                                        {Object.entries(UpcomingMatchesByDate()).slice(0,1).map(([date, matches]) => (
                                             <div key={date}>
                                                 <div className="text-lgtext-gray-800 font-medium mb-2">{date}</div>
                                                 <div className="space-y-2">
-                                                    {matches.map((match: Rencontre, index) => (
+                                                    {matches.slice(0, 5).map((match: Rencontre, index) => (
                                                         <Link
                                                             key={index}
                                                             href={`${PATHS.TEAMS.path}/${IsHome(match) ? match.idEngagementEquipe1.id : match.idEngagementEquipe2.id}`}
@@ -316,13 +322,7 @@ export default function HomePage() {
             </motion.section>
 
             {/* Court Image Section */}
-            <motion.section
-                initial={{opacity: 0}}
-                whileInView={{opacity: 1}}
-                viewport={{once: true}}
-                transition={{duration: 0.8}}
-                className="py-16 bg-gray-50"
-            >
+            <section className="py-16 bg-gray-50">
                 <div className="w-2/3 mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-center mb-8 text-red-600">Notre Salle</h2>
                     <div className="rounded-lg overflow-hidden shadow-2xl">
@@ -333,7 +333,7 @@ export default function HomePage() {
                         />
                     </div>
                 </div>
-            </motion.section>
+            </section>
         </div>
     );
 }

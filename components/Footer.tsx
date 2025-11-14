@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import {GENERAL_INFO, SOCIAL_LINKS} from "@/data/const";
-import {Partners} from "@/data/sponsors";
+import {MainSponsors} from "@/data/sponsors";
 import {PATHS} from "@/data/routes";
 
 export default async function Footer() {
@@ -123,10 +123,10 @@ export default async function Footer() {
                 </div>
 
                 {/* Sponsors */}
-                {/*<div className="border-t border-gray-800 pt-8 mb-8">
+                <div className="border-t border-gray-800 pt-8 mb-8">
                     <h4 className="text-white text-center mb-4 text-sm">Nos Partenaires Principaux</h4>
                     <div className="flex flex-wrap justify-center items-center gap-6">
-                        {Partners().map((sponsor, index) => (
+                        {MainSponsors().map((sponsor, index) => (
                             <div
                                 key={index}
                                 className="bg-white p-3 rounded-lg hover:scale-105 transition-transform"
@@ -150,7 +150,6 @@ export default async function Footer() {
                         ))}
                     </div>
                 </div>
-                */}
 
                 {/* Copyright */}
                 <div className="border-t border-gray-800 pt-6 text-center">

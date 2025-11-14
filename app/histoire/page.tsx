@@ -12,7 +12,7 @@ export default function HistoryPage() {
                 <motion.div
                     initial={{y: -20, opacity: 0}}
                     animate={{y: 0, opacity: 1}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.2}}
                     className="text-center mb-12"
                 >
                     <h1 className="mb-4 text-red-600">Notre Histoire</h1>
@@ -33,7 +33,7 @@ export default function HistoryPage() {
                                 initial={{x: -30, opacity: 0}}
                                 whileInView={{x: 0, opacity: 1}}
                                 viewport={{once: true}}
-                                transition={{duration: 0.6, delay: index * 0.1}}
+                                transition={{duration: 0.2, delay: index * 0.1}}
                                 className="relative pl-8 md:pl-40"
                             >
                                 {/* Timeline dot */}
@@ -77,7 +77,7 @@ export default function HistoryPage() {
                     initial={{y: 20, opacity: 0}}
                     whileInView={{y: 0, opacity: 1}}
                     viewport={{once: true}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.2}}
                     className="bg-gradient-to-br from-red-600 to-red-800 text-white p-8 md:p-12 rounded-lg shadow-xl"
                 >
                     <h2 className="text-center mb-8 text-white">Nos Valeurs</h2>

@@ -43,10 +43,10 @@ export interface SponsorType {
 
 export function GetSponsors(): SponsorType[] {
     const sponsors: SponsorType[] = [];
-    sponsors.push(...Partners())
+    sponsors.push(...MainSponsors())
     sponsors.push(...TechnicalPartners())
     sponsors.push(...OfficialSponsors())
-    sponsors.push(...OtherSponsors())
+    sponsors.push(...Partners())
     return sponsors;
 }
 
@@ -215,7 +215,7 @@ export function OfficialSponsors(): SponsorType[] {
     ]
 }
 
-export function OtherSponsors(): SponsorType[] {
+export function MainSponsors(): SponsorType[] {
     return [
         {
             name: "Foissier",

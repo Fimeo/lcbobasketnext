@@ -1,7 +1,7 @@
 'use client'
 
 import {motion} from "motion/react";
-import {Partners, OfficialSponsors, OtherSponsors, TechnicalPartners} from "@/data/sponsors";
+import {Partners, OfficialSponsors, MainSponsors, TechnicalPartners} from "@/data/sponsors";
 import {GENERAL_INFO} from "@/data/const";
 import {Mail} from "lucide-react";
 import SponsorCard from "./components/SponsorCard";
@@ -13,7 +13,7 @@ export default function SponsorsPage() {
                 <motion.div
                     initial={{y: -20, opacity: 0}}
                     animate={{y: 0, opacity: 1}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.2}}
                     className="text-center mb-12"
                 >
                     <h1 className="mb-4 text-red-600">Nos Partenaires</h1>
@@ -30,12 +30,12 @@ export default function SponsorsPage() {
                     initial={{y: 30, opacity: 0}}
                     whileInView={{y: 0, opacity: 1}}
                     viewport={{once: true}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.2}}
                     className="mb-16"
                 >
                     <h2 className="mb-8 text-red-600">Partenaires</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {Partners().map((sponsor, index) => (
+                        {MainSponsors().map((sponsor, index) => (
                             <motion.div
                                 key={index}
                                 initial={{y: 20, opacity: 0}}
@@ -54,7 +54,7 @@ export default function SponsorsPage() {
                     initial={{y: 30, opacity: 0}}
                     whileInView={{y: 0, opacity: 1}}
                     viewport={{once: true}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.2}}
                     className="mb-16"
                 >
                     <h2 className="mb-8 text-red-600">Partenaires Officiels</h2>
@@ -78,7 +78,7 @@ export default function SponsorsPage() {
                     initial={{y: 30, opacity: 0}}
                     whileInView={{y: 0, opacity: 1}}
                     viewport={{once: true}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.2}}
                     className="mb-16"
                 >
                     <h2 className="mb-8 text-red-600">Partenaires Techniques</h2>
@@ -102,12 +102,12 @@ export default function SponsorsPage() {
                     initial={{y: 30, opacity: 0}}
                     whileInView={{y: 0, opacity: 1}}
                     viewport={{once: true}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.2}}
                     className="mb-16"
                 >
                     <h2 className="mb-8 text-red-600">Autres Partenaires</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {OtherSponsors().map((sponsor, index) => (
+                        {Partners().map((sponsor, index) => (
                             <motion.div
                                 key={index}
                                 initial={{y: 20, opacity: 0}}
@@ -125,7 +125,7 @@ export default function SponsorsPage() {
                     initial={{y: 20, opacity: 0}}
                     whileInView={{y: 0, opacity: 1}}
                     viewport={{once: true}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.2}}
                     className="bg-gradient-to-br from-red-600 to-red-800 text-white p-8 md:p-12 rounded-lg shadow-xl"
                 >
                     <div className="max-w-3xl mx-auto text-center">

@@ -17,7 +17,7 @@ export default function InfosPage() {
                 <motion.div
                     initial={{opacity: 0, y: 20}}
                     animate={{opacity: 1, y: 0}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.2}}
                     className="text-center mb-12"
                 >
                     <h1 className="text-red-600 mb-4">Informations Pratiques</h1>
@@ -89,7 +89,7 @@ export default function InfosPage() {
                     initial={{opacity: 0, y: 20}}
                     whileInView={{opacity: 1, y: 0}}
                     viewport={{once: true}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.2}}
                     className="mb-16"
                 >
                     <div className="flex items-center gap-3 mb-6">
@@ -99,13 +99,7 @@ export default function InfosPage() {
 
                     <div className="grid md:grid-cols-3 gap-6">
                         {GYMNASES.map((gymnase, index) => (
-                            <motion.div
-                                key={gymnase.name}
-                                initial={{opacity: 0, y: 20}}
-                                whileInView={{opacity: 1, y: 0}}
-                                viewport={{once: true}}
-                                transition={{duration: 0.5, delay: index * 0.1}}
-                            >
+                            <div key={index}>
                                 <Card className="h-full hover:shadow-xl transition-shadow">
                                     <CardHeader>
                                         <CardTitle className="text-red-600 flex items-center gap-2">
@@ -125,7 +119,7 @@ export default function InfosPage() {
                                         </a>
                                     </CardContent>
                                 </Card>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </motion.section>
@@ -135,7 +129,7 @@ export default function InfosPage() {
                     initial={{opacity: 0, y: 20}}
                     whileInView={{opacity: 1, y: 0}}
                     viewport={{once: true}}
-                    transition={{duration: 0.6}}
+                    transition={{duration: 0.2}}
                     className="mb-16"
                 >
                     <div className="flex items-center gap-3 mb-6">
