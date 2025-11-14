@@ -1,30 +1,32 @@
-import logoDefault from '@/assets/images/logo/lcbo_logo.png';
-import logoCA from "@/assets/images/logo/logo_CA.png";
-import logoSupply from "@/assets/images/logo/logo_supp.png";
-import logoTMC from "@/assets/images/logo/logo_tmc.png";
-import logoBSO from "@/assets/images/logo/logo_bso.png";
-import logoConseil from "@/assets/images/logo/logo_conseil_dep.jpeg";
-import logoComite from "@/assets/images/logo/logo_comite_calvados.png";
-import logoLigue from "@/assets/images/logo/logo_ligue_nor.png";
-import logoJeff from "@/assets/images/logo/logo_jeff.png";
-import logoPreau from "@/assets/images/logo/logo_lepreau.jpeg";
-import logoVin1000 from "@/assets/images/logo/logo_vin_1000.jpeg";
-import logoCave from "@/assets/images/logo/logo_cave_etienne.jpg";
-import logoHSD from "@/assets/images/logo/logo_hsd.png";
-import logoPubNPose from "@/assets/images/logo/logo_pubnpose.svg";
-import logoBatitec from "@/assets/images/logo/logo_batitec.jpg";
-import logoDRD from "@/assets/images/logo/logo_drd.svg";
-import logoSerrurerier from "@/assets/images/logo/logo_serrurerie_voisin.svg";
-import logoMacDo from "@/assets/images/logo/logo_mcdo.png";
-import logoLaserGame from "@/assets/images/logo/logo_laser_game.svg";
-import logoJerome from "@/assets/images/logo/logo_jerome_formation.png";
-import logoE2SE from "@/assets/images/logo/logo_e2se.svg";
-import logoEquipClub from "@/assets/images/logo/logo_equip_club.svg";
-import logoKinesio from "@/assets/images/logo/logo_kinesio.svg";
-import logoAutovision from "@/assets/images/logo/logo_autovision.jpeg";
-import logoCTA from "@/assets/images/logo/logo_cta14.svg";
-import logoProfilPlus from "@/assets/images/logo/logo_profilplus.jpeg";
 import {StaticImageData} from "next/image";
+
+import {
+    Foissier_CMJN_contour_png,
+    LOGO_FFBB_png,
+    service_civique_png,
+    emzel_png, hG_png,
+    home_me_png,
+    immoservices_png,
+    lasergame_png,
+    logo_letablier_600_png,
+    REALISM_logo_quadri_bleu_orange_png,
+    cphoto_png,
+    freres_chaussettes_png,
+    kokomo_png,
+    locevasion_png,
+    logo_fiducial_png, a_tri_home_png,
+    arttif_png,
+    cre_habitat_png,
+    desbont_png,
+    fossey_png,
+    hortense_png,
+    lebeau_martina_png,
+    market_png,
+    minute_blonde_png,
+    pompes_funebres_png,
+    united_avocats_png,
+    zecarrosserie_png
+} from '@/assets/index'
 
 export interface SponsorType {
     name: string;
@@ -33,44 +35,167 @@ export interface SponsorType {
     description?: string;
     address?: string;
     phone?: string;
+    email?: string;
     category?: string;
     facebook?: string;
+    instragram?: string;
 }
-
 
 export function GetSponsors(): SponsorType[] {
     const sponsors: SponsorType[] = [];
-    sponsors.push(...MajorSponsors())
+    sponsors.push(...Partners())
+    sponsors.push(...TechnicalPartners())
     sponsors.push(...OfficialSponsors())
     sponsors.push(...OtherSponsors())
     return sponsors;
 }
 
-export function MajorSponsors(): SponsorType[] {
+export function Partners(): SponsorType[] {
     return [
         {
-            name: "Crédit Agricole",
-            logo: logoCA,
-            description: "Le Crédit agricole, anciennement surnommé la« Banque verte » du fait de son activité d’origine au service du monde agricole, est le plus grand réseau de banques coopératives et mutualistes au monde.",
-            address: "12 Longue Vue des photographes, 14111 Louvigny",
-            phone: "02 31 55 13 01",
-            website: "https://www.credit-agricole.fr/ca-normandie/particulier.html",
+            name: "Fiducial",
+            website: "https://www.fiducial.fr/",
+            logo: logo_fiducial_png,
+            category: "Services informatique"
         },
         {
-            name: "SUPPLY SHOP / SUPPLY WEB",
-            logo: logoSupply,
-            description: "Supplyshop met les commerces de proximité caennais à portée de clic ! Start-up lancée en 2018, Supplyshop est un concept imaginé par des caennais pour les caennais.",
-            address: "9 Rue Melingue, 14000 Caen",
-            phone: "02 46 88 00 24",
-            website: "https://supplyshop.fr/",
+            name: "A Tri Home",
+            website: "https://a-tri-home.fr/",
+            address: "43 rue de Caen, 14740 Bretteville l'Orgeuilleuse",
+            phone: "06 48 17 34 04",
+            logo: a_tri_home_png,
+            category: "Immobilier"
         },
         {
-            name: "TMC",
-            logo: logoTMC,
-            description: "Traitement des Métaux du Calvados est une entreprise familiale fondée en 1999 à Verson. Ils proposent une large gamme de traitements sur Aluminium, Acier, Inox, Cuivre, Laiton et Bronze.",
-            address: "19 Rue du Bel air, 14790 Verson",
-            phone: "02 31 71 00 99",
-            website: "https://tmc-verson.com/",
+            name: "Art'tif",
+            category: "Coiffure",
+            logo: arttif_png,
+            address: "110 Rte de Bretagne, 14760 Bretteville-sur-Odon",
+            phone: "02 31 74 59 52",
+            website: "https://www.planity.com/arttif-14760-bretteville-sur-odon"
+        },
+        {
+            name: "Cré-Habitat",
+            website: "https://www.cre-habitat.fr/",
+            logo: cre_habitat_png,
+            phone: "02 31 93 51 65",
+            address: "40 route de Bretagne, 14760 Bretteville-sur-Odon",
+            category: "Construction - Habitat"
+        },
+        {
+            name: "Desbont Sarl",
+            logo: desbont_png,
+            address: "9 Rue du Long Douet, 14760 Bretteville-sur-Odon",
+            phone: "02 31 74 41 07",
+            website: "Construction - BTP"
+        },
+        {
+            name: "Publicité Fossey",
+            website: "https://pubfossey.fr/",
+            logo: fossey_png,
+            category: "Publicité - Communication",
+            phone: "02 31 52 08 56",
+            email: "Pubfossey@wanadoo.fr",
+            address: "Rue des Frères Lumière ZI3, 14540 Grentheville"
+        },
+        {
+            name: "Horthense Père et Fils",
+            category: "Plomberie - Chauffagiste",
+            logo: hortense_png,
+            website: "https://www.horthense-pere-fils.fr/",
+            address: "5 bis Av. de la Voie au Coq, 14760 Bretteville-sur-Odon",
+            phone: "09 85 09 15 35"
+        },
+        {
+            name: "Lebeau Martina",
+            category: "Electricité générale",
+            address: "16 Av. de la Voie au Coq, 14760 Bretteville-sur-Odon",
+            phone: "02 31 75 22 85",
+            logo: lebeau_martina_png,
+            website: "https://www.lebeau-martina.fr/"
+        },
+        {
+            name: "Market Bretteville-Sur-Odon",
+            category: "Alimentation",
+            address: "12 Rue des Forques, 14760 Bretteville-sur-Odon",
+            phone: "02 31 74 20 60",
+            logo: market_png,
+        },
+        {
+            name: "La minute blonde",
+            address: "541 Rue Yvonne Guégan, 14760 Bretteville-sur-Odon",
+            phone: "02 31 28 76 81",
+            logo: minute_blonde_png,
+            category: "Caviste"
+        },
+        {
+            name: "Pompes funèbres de l’Odon",
+            website: "https://www.cosseronpfdelodon.com/",
+            logo: pompes_funebres_png,
+            phone: "02 31 73 60 06",
+            address: "8 rue Froide, 14760 Bretteville-sur-Odon"
+        },
+        {
+            name: "Cabinet United Avocats",
+            website: "https://www.united-avocats.fr/",
+            logo: united_avocats_png,
+            address: "19 Av. de l'Hippodrome, 14000 Caen",
+            phone: "02 31 85 30 10",
+            category: "Cabinet d'avocats"
+        },
+        {
+            name: "Carrosserie Carpiquet",
+            logo: zecarrosserie_png,
+            website: "https://www.zecarrossery.fr/carrossier/garage-carrosserie-caen-carpiquet",
+            category: "Carroserie",
+            phone: "02 31 22 36 14",
+            email: "carpiquet@zecarrossery.pro"
+        }
+    ]
+}
+
+export function TechnicalPartners(): SponsorType[] {
+    return [
+        {
+            name: "REALISM'",
+            logo: REALISM_logo_quadri_bleu_orange_png,
+            phone: "07 87 01 36 43",
+            email: "contact@realism-renovation.com",
+            address: "26 rue du Général Leclerc, 14790 Verson",
+            category: "Construction - BTP"
+        },
+        {
+            name: "CPhotographie",
+            logo: cphoto_png,
+            website: "https://www.cphotographie.com/",
+            category: "Photographie",
+            email: "pouchincamille.cphotographie@gmail.com",
+            instragram: "https://www.instagram.com/cphotographiie"
+        },
+        {
+            name: "Les frères chaussettes",
+            logo: freres_chaussettes_png,
+            website: "https://lesfrereschaussettes.com/",
+            category: "Habillement",
+            email: "contact@lesfrereschaussettes.com",
+            phone: "07 49 91 13 48"
+        },
+        {
+            name: "Kokomo",
+            logo: kokomo_png,
+            facebook: "https://www.facebook.com/KokomoCaen/",
+            category: "Restauration - Bar",
+            phone: "02 31 93 66 80",
+            address: "47 Rue de Geôle, 14000 Caen"
+        },
+        {
+            name: "LOC'EVASION 14",
+            logo: locevasion_png,
+            website: "https://www.loc-evasion14.fr/",
+            address: "69 rue Valérie André, 14760 Bretteville-sur-Odon",
+            category: "Transport",
+            email: "caen@loc-evasion14.fr",
+            phone: "02 31 85 93 71"
         }
     ]
 }
@@ -78,24 +203,14 @@ export function MajorSponsors(): SponsorType[] {
 export function OfficialSponsors(): SponsorType[] {
     return [
         {
-            name: "Bretteville sur Odon",
-            logo: logoBSO,
-            website: "http://www.brettevillesurodon.fr",
+            name: "FFBB",
+            logo: LOGO_FFBB_png,
+            website: "https://www.ffbb.com/",
         },
         {
-            name: "Conseil départemental",
-            logo: logoConseil,
-            website: "https://www.calvados.fr/accueil.html",
-        },
-        {
-            name: "Comité calvados basketball",
-            logo: logoComite,
-            website: "https://www.comitebasket14.fr",
-        },
-        {
-            name: "Ligue normandie basketball",
-            logo: logoLigue,
-            website: "https://normandiebasketball.fr",
+            name: "Service civique",
+            logo: service_civique_png,
+            website: "https://www.service-civique.gouv.fr/",
         }
     ]
 }
@@ -103,170 +218,60 @@ export function OfficialSponsors(): SponsorType[] {
 export function OtherSponsors(): SponsorType[] {
     return [
         {
-            name: "Jeff de Bruges",
-            logo: logoJeff,
-            address: "22 Rue Saint-Jean, 14000 Caen",
-            phone: "02 31 38 84 28",
-            website: "https://www.jeff-de-bruges.com/jeff-de-bruges-caen-saint-jean",
-            category: "Biscuiterie – chocolatier",
+            name: "Foissier",
+            logo: Foissier_CMJN_contour_png,
+            address: "Rue de l’Europe, 14460 Colombelles",
+            phone: "02 31 35 00 60",
+            website: "https://www.reseau-le-saint.com/foissier/",
+            category: "Alimentation",
         },
         {
-            name: "Le préau",
-            address: "14 Rue Arcisse de Caumont, 14000 Caen",
-            phone: "09 67 50 90 46",
-            facebook: "https://www.facebook.com/p/Le-Pr%C3%A9au-100083423166561/",
-            category: "Boissons – Vins – Bars",
-            logo: logoPreau,
+            name: "Emzel",
+            logo: emzel_png,
+            address: "5 Chemin dit de lion 14610 Epron",
+            phone: "06 66 40 12 86",
+            category: "Marketing",
+            website: "https://emzel.fr/"
         },
         {
-            name: "Vins 1000 lieux",
-            address: "134 Rue du Général Leclerc, 14790 Verson",
-            category: "Boissons – Vins – Bars",
-            phone: "02 31 85 67 74",
-            website: "https://www.vins1000lieux.com",
-            logo: logoVin1000,
+            name: "H&G Gestion Privée - Gestion de patrimoine",
+            logo: hG_png,
+            address: "60 rue Philippe Livry-level, 14760 Bretteville-sur-Odon",
+            phone: "06 27 48 35 26",
+            website: "https://www.financiere-du-cedre.fr/",
+            category: "Financier"
         },
         {
-            name: "Cave Saint Etienne",
-            address: "92 Boulevard André Detolle, 14000 Caen",
-            phone: "02 31 38 26 80",
-            website: "https://www.cavesaintetienne.com/",
-            logo: logoCave,
-            category: "Boissons – Vins – Bars",
+            name: "Home Me",
+            logo: home_me_png,
+            address: "16 bis Quai Amiral Hamelin, 14000 Caen",
+            email: "contact@home-me.fr",
+            website: "https://home-me.fr/",
+            category: "Immobilier"
         },
         {
-            name: "HSD",
-            address: "24 Rue Villons les Buissons, 14000 Caen",
-            phone: "06 08 25 23 63",
-            website: "https://hsdprecisiondesign.fr",
-            logo: logoHSD,
-            category: "Enseignes - Sérigraphie",
-        },
-        {
-            name: "PUB N' POSE",
-            address: "17 Rue des 4 Vents, 14790 Verson",
-            phone: "02 31 26 21 63",
-            website: "https://www.pubnpose.com",
-            logo: logoPubNPose,
-            category: "Enseignes - Sérigraphie",
-        },
-        {
-            name: "BATITEC",
-            logo: logoBatitec,
-            address: "5 Rue des 4 Vents, 14790 Verson",
-            phone: "02 31 26 06 26",
-            website: "https://www.batitec-sa.fr",
-            category: "Architecture - Construction",
-        },
-        {
-            name: "Martina Lebeau",
-            address: "16 Avenue de la Voie au Coq, 14760 Bretteville-Sur-Odon",
-            phone: "02 31 75 22 85",
-            website: "https://www.lebeau-martina.fr",
-            category: "Chauffage - Électricité - Plomberie",
-            logo: logoDefault,
-        },
-        {
-            name: "DRD",
-            category: "Portail – Fenêtre",
-            website: "https://www.drdmenuiserie.fr",
-            phone: "02 31 73 30 60",
-            address: "4 Rue du Long Douet, 14760 Bretteville-Sur-Odon",
-            logo: logoDRD,
-        },
-        {
-            name: "Serrurerie Voisin",
-            category: "Serrurerie",
-            address: "88 Quai Vendeuvre, 14000 Caen",
-            phone: "02 31 84 68 21",
-            website: "https://www.serrurerie-voisin-caen.fr/",
-            logo: logoSerrurerier,
-        },
-        {
-            name: "McDonald's",
-            category: "Restaurants",
-            address: "1 Avenue du Fresne, 14760 Bretteville-Sur-Odon",
-            phone: "02 31 73 64 27",
-            website: "https://www.restaurants.mcdonalds.fr/restaurants/mcdonalds-bretteville-sur-odon/917",
-            logo: logoMacDo,
+            name: "Immo Services",
+            logo: immoservices_png,
+            address: "4 rue de Daguerre 14540 Grentheville",
+            phone: "02 31 74 01 00",
+            category: "Plomberie, serrurerie, électricité"
         },
         {
             name: "Laser games",
-            address: "19 Avenue de la Voie au Coq, 14760 Bretteville-Sur-Odon",
-            phone: "02 31 74 44 92",
+            logo: lasergame_png,
             website: "https://www.lasergames-caen.com/",
-            logo: logoLaserGame,
-            category: "Loisirs",
+            phone: "02 31 74 44 92",
+            address: "19, avenue voie du Coq, 14760 Bretteville/Odon",
+            email: "lasergames.caen@gmail.com",
+            category: "Divertissement"
         },
         {
-            name: "Jérôme formation",
-            category: "Auto-école",
-            address: "33 Rue Guillaume le Conquérant, 14000 Caen",
-            phone: "02 31 50 25 27",
-            logo: logoJerome,
-            website: "http://autoecolejerome.fr/",
-        },
-        {
-            name: "E2SE",
-            category: "Éducation",
-            address: "4 Rue des Mouettes, 14000 Caen",
-            phone: "02 31 53 30 30",
-            logo: logoE2SE,
-            website: "https://www.e2se.fr/",
-        },
-        {
-            name: "Équip'Club",
-            category: "Équipementier",
-            address: "74 Rue des Rosiers, 14000 Caen",
-            phone: "02 31 86 66 67",
-            logo: logoEquipClub,
-            facebook: "https://www.facebook.com/equipclubcaen",
-        },
-        {
-            name: "Cosseron Marie & Fils",
-            category: "Pompes Funèbres",
-            address: "8 Rue froide, 14760 Bretteville-Sur-Odon",
-            phone: "02 31 73 60 06",
-            website: "https://www.cosseronpfdelodon.com/",
-            logo: logoDefault,
-        },
-        {
-            name: "Karine LEFEVRE - Kinésiologue",
-            category: "Soin",
-            address: "7 Avenue de la Voie au Coq, 14760 Bretteville-Sur-Odon",
-            phone: "06 15 18 61 62",
-            logo: logoKinesio,
-            website: "http://karinekinesiologie.e-monsite.com/",
-        },
-        {
-            name: "Autovision",
-            category: "Garage - Carrosserie - Autres",
-            address: "120 Avenue de la Voie au Coq, 14760 Bretteville-Sur-Odon",
-            phone: "02 31 73 87 87",
-            website: "https://www.cta14.com/",
-            logo: logoAutovision,
-        },
-        {
-            name: "CTA 14",
-            category: "Garage - Carrosserie - Autres",
-            address: "120 Avenue de la Voie au Coq, 14760 Bretteville-Sur-Odon",
-            phone: "02 31 73 87 87",
-            logo: logoCTA,
-            website: "https://www.cta14.com/",
-        },
-        {
-            name: "Profil +",
-            category: "Garage - Carrosserie - Autres",
-            address: "12 Rue du Fresne, 14760 Bretteville-Sur-Odon",
-            phone: "02 31 73 52 00",
-            logo: logoProfilPlus,
-            website: "https://www.profilplus.fr/agence/153-bretteville-sur-odon",
-        },
-        {
-            name: "MHGM",
-            category: "Transports",
-            address: "26 Avenue de thiès, 14000 Caen",
-            logo: logoDefault,
+            name: "Le Tablier",
+            logo: logo_letablier_600_png,
+            category: "Restauration",
+            address: "16 Rue Martin Luther King, 14280 Saint-Contest",
+            phone: "02 31 44 60 24",
+            website: "https://restaurant-letablier-caen.fr/"
         }
     ];
 }

@@ -30,7 +30,7 @@
         "./_data/*"
       ],
       "@/assets/*": [
-        "./assets/*"
+        "./assets_optimized/*"
       ]
     }
   },

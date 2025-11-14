@@ -1,4 +1,4 @@
-import logo from "@/assets/images/logo/lcbo_logo.png";
+import {lcbo_logo_webp} from "@/assets/index";
 import {TeamNumber} from "@/data/teams";
 
 export const SOCIAL_LINKS = {
@@ -12,9 +12,11 @@ export const GENERAL_INFO = {
     phone: '06 89 78 30 39',
     licenceNumber: 250,
     teamNumber: TeamNumber(),
-    logo: logo,
+    logo: lcbo_logo_webp,
     clubCode: 'NOR0014042',
     clubId: '11402',
+    baseURL: 'https://lcbobasket.fr',
+    statsPlausibleURL: "https://plausible.appro.ovh/js/script.outbound-links.js"
 };
 
 export function FormatShortDate(dateInput: Date | string): string {

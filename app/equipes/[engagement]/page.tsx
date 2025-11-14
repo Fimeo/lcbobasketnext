@@ -8,7 +8,7 @@ import {PATHS} from "@/data/routes";
 import {Card, CardContent} from "@/components/ui/card";
 import {FFBB_LINKS, IsHome, MatchByEngagement, RankingFromEngagement, Rencontre} from "@/data/ffbb";
 import {Badge} from "@/components/ui/badge";
-import {FormatShortDate} from "@/data/const";
+import {FormatShortDate, FormatTime} from "@/data/const";
 
 type TeamPageProps = {
     params: Promise<{ engagement: string }>
@@ -200,7 +200,8 @@ export function TeamDetailComponent({team}: TeamDetailsCardProps) {
                                             {/* Date et heure */}
                                             <div className="col-span-1">
                                                 <p className="text-black">
-                                                    <span className="text-gray-600">{FormatShortDate(match.date_rencontre)}</span>
+                                                    <span className="text-gray-600">{FormatShortDate(match.date_rencontre)}</span><br/>
+                                                    <span className="text-gray-600">{FormatTime(match.date_rencontre)}</span>
                                                 </p>
                                             </div>
 

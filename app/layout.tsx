@@ -4,16 +4,17 @@ import Navigation from "../components/Navigation";
 import Footer from "@/components/Footer";
 import {Toaster} from "sonner";
 import ScrollToTop from "@/components/ScrollToTop";
+import {GENERAL_INFO} from "@/data/const";
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://lcbobasket.appro.ovh/'),
+    metadataBase: new URL(GENERAL_INFO.baseURL),
     title: { default: 'LCBO Basket', template: '%s | LCBO Basket' },
     description: 'LCBO Basket - Passion, Excellence, Esprit d\'Équipe',
     openGraph: {
         title: 'LCBO Basket',
         description: 'LCBO Basket - Passion, Excellence, Esprit d\'Équipe',
-        url: 'https://lcbobasket.appro.ovh/',
-        images: [{ url: 'https://lcbobasket.appro.ovh/logo.png' }]
+        url: GENERAL_INFO.baseURL,
+        images: [{ url: GENERAL_INFO.baseURL+'/logo.png' }]
     },
 }
 
@@ -26,7 +27,6 @@ export default function RootLayout({
         <html lang="fr">
         <head>
             <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
-            <link rel="manifest" href="/manifest.json"/>
             <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
         </head>
 
@@ -40,7 +40,7 @@ export default function RootLayout({
             <Footer/>
             <Toaster/>
         </div>
-        <script defer data-domain="lcbobasket.fr" src="https://plausible.appro.ovh/js/script.outbound-links.js"></script>
+        <script defer data-domain="lcbobasket.fr" src={GENERAL_INFO.statsPlausibleURL}></script>
         </body>
         </html>
     );

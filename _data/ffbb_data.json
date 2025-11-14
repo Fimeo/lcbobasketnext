@@ -328,7 +328,7 @@
       "resultatEquipe1": "70",
       "resultatEquipe2": "57",
       "joue": true,
-      "nomEquipe1": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
+      "nomEquipe1": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 1",
       "nomEquipe2": "IE - CTC BAIE BASKETBALL - GRANVILLE BASKET CLUB",
       "date_rencontre": "2025-10-04T17:30:00",
       "idEngagementEquipe1": {
@@ -553,7 +553,7 @@
       "resultatEquipe2": "70",
       "joue": true,
       "nomEquipe1": "AL MADELEINE EVREUX",
-      "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
+      "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 1",
       "date_rencontre": "2025-10-11T15:30:00",
       "idEngagementEquipe1": {
         "id": "200000005191703",
@@ -584,7 +584,7 @@
       "resultatEquipe1": "53",
       "resultatEquipe2": "68",
       "joue": true,
-      "nomEquipe1": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
+      "nomEquipe1": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 1",
       "nomEquipe2": "CAEN SUD BASKET",
       "date_rencontre": "2025-10-11T17:00:00",
       "idEngagementEquipe1": {
@@ -809,7 +809,7 @@
       "resultatEquipe2": "77",
       "joue": true,
       "nomEquipe1": "MONT SAINT AIGNAN BASKET CLUB",
-      "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
+      "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 1",
       "date_rencontre": "2025-10-18T15:00:00",
       "idEngagementEquipe1": {
         "id": "200000005198898",
@@ -840,7 +840,7 @@
       "resultatEquipe1": "54",
       "resultatEquipe2": "84",
       "joue": true,
-      "nomEquipe1": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
+      "nomEquipe1": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 1",
       "nomEquipe2": "IE - CTC ASSA-STB - SAINT THOMAS BASKET LE HAVRE",
       "date_rencontre": "2025-10-18T17:30:00",
       "idEngagementEquipe1": {
@@ -1285,9 +1285,9 @@
       "numero": "102061",
       "numeroJournee": "6",
       "idPoule": "200000003019809",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
+      "resultatEquipe1": "75",
+      "resultatEquipe2": "66",
+      "joue": true,
       "nomEquipe1": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 3",
       "nomEquipe2": "AVANT GARDE CAEN - 2",
       "date_rencontre": "2025-11-07T21:00:00",
@@ -1317,9 +1317,9 @@
       "numero": "2",
       "numeroJournee": "1",
       "idPoule": "200000003027255",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
+      "resultatEquipe1": "30",
+      "resultatEquipe2": "16",
+      "joue": true,
       "nomEquipe1": "CLUB BASKET D'IFS",
       "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
       "date_rencontre": "2025-11-08T12:30:00",
@@ -1349,9 +1349,9 @@
       "numero": "5",
       "numeroJournee": "1",
       "idPoule": "200000003027293",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
+      "resultatEquipe1": "28",
+      "resultatEquipe2": "27",
+      "joue": true,
       "nomEquipe1": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
       "nomEquipe2": "PAYS D'AUGE BASKETBALL - 2",
       "date_rencontre": "2025-11-08T12:45:00",
@@ -1381,9 +1381,9 @@
       "numero": "1",
       "numeroJournee": "1",
       "idPoule": "200000003028926",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
+      "resultatEquipe1": "30",
+      "resultatEquipe2": "33",
+      "joue": true,
       "nomEquipe1": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
       "nomEquipe2": "DOUVRES BASKET COEUR DE NACRE - 1",
       "date_rencontre": "2025-11-08T13:45:00",
@@ -1413,11 +1413,11 @@
       "numero": "3455",
       "numeroJournee": "5",
       "idPoule": "200000003026059",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
+      "resultatEquipe1": "59",
+      "resultatEquipe2": "66",
+      "joue": true,
       "nomEquipe1": "DOUVRES BASKET COEUR DE NACRE",
-      "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
+      "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 1",
       "date_rencontre": "2025-11-08T15:00:00",
       "idEngagementEquipe1": {
         "id": "200000005198885",
@@ -1445,9 +1445,9 @@
       "numero": "3",
       "numeroJournee": "1",
       "idPoule": "200000003029169",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
+      "resultatEquipe1": "24",
+      "resultatEquipe2": "44",
+      "joue": true,
       "nomEquipe1": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
       "nomEquipe2": "CLUB ATHLETIQUE LEXOVIEN",
       "date_rencontre": "2025-11-08T15:00:00",
@@ -1477,9 +1477,9 @@
       "numero": "4",
       "numeroJournee": "1",
       "idPoule": "200000003029187",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
+      "resultatEquipe1": "44",
+      "resultatEquipe2": "25",
+      "joue": true,
       "nomEquipe1": "CERCLE SPORTIF BAYEUX - 2",
       "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 2",
       "date_rencontre": "2025-11-08T15:15:00",
@@ -1509,9 +1509,9 @@
       "numero": "4070",
       "numeroJournee": "5",
       "idPoule": "200000003025061",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
+      "resultatEquipe1": "30",
+      "resultatEquipe2": "54",
+      "joue": true,
       "nomEquipe1": "HEROUVILLE BASKET",
       "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
       "date_rencontre": "2025-11-08T15:30:00",
@@ -1541,9 +1541,9 @@
       "numero": "2",
       "numeroJournee": "1",
       "idPoule": "200000003028970",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
+      "resultatEquipe1": "54",
+      "resultatEquipe2": "52",
+      "joue": true,
       "nomEquipe1": "CAEN SUD BASKET - 1",
       "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
       "date_rencontre": "2025-11-08T15:30:00",
@@ -1573,9 +1573,9 @@
       "numero": "4669",
       "numeroJournee": "5",
       "idPoule": "200000003025071",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
+      "resultatEquipe1": "83",
+      "resultatEquipe2": "69",
+      "joue": true,
       "nomEquipe1": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 1",
       "nomEquipe2": "OISSEL BASKET SEINE",
       "date_rencontre": "2025-11-08T16:30:00",
@@ -1605,9 +1605,9 @@
       "numero": "3",
       "numeroJournee": "1",
       "idPoule": "200000003029278",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
+      "resultatEquipe1": "61",
+      "resultatEquipe2": "64",
+      "joue": true,
       "nomEquipe1": "CAEN SUD BASKET - 4",
       "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 2",
       "date_rencontre": "2025-11-08T17:00:00",
@@ -1637,9 +1637,9 @@
       "numero": "2",
       "numeroJournee": "1",
       "idPoule": "200000003029204",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
+      "resultatEquipe1": "33",
+      "resultatEquipe2": "42",
+      "joue": true,
       "nomEquipe1": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 2",
       "nomEquipe2": "AJS OUISTREHAM - 2",
       "date_rencontre": "2025-11-08T18:00:00",
@@ -1669,9 +1669,9 @@
       "numero": "1643",
       "numeroJournee": "7",
       "idPoule": "200000003018873",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
+      "resultatEquipe1": "63",
+      "resultatEquipe2": "72",
+      "joue": true,
       "nomEquipe1": "CLUB SPORTIF  VESPIERE  ORBEC BASKET-BALL",
       "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
       "date_rencontre": "2025-11-08T20:00:00",
@@ -1701,9 +1701,9 @@
       "numero": "2301",
       "numeroJournee": "8",
       "idPoule": "200000003023367",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
+      "resultatEquipe1": "58",
+      "resultatEquipe2": "56",
+      "joue": true,
       "nomEquipe1": "STADE SAINT LOIS BASKET",
       "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
       "date_rencontre": "2025-11-09T14:00:00",
@@ -1725,38 +1725,6 @@
         "libelle": "GYMNASE COMMUNAUTAIRE",
         "commune": {
           "libelle": "SAINT-LO"
-        }
-      }
-    },
-    {
-      "id": "200000014145795",
-      "numero": "4684",
-      "numeroJournee": "6",
-      "idPoule": "200000003025071",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
-      "nomEquipe1": "IE - CTC BAIE BASKETBALL - GRANVILLE BASKET CLUB",
-      "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
-      "date_rencontre": "2025-11-15T00:00:00",
-      "idEngagementEquipe1": {
-        "id": "200000005191707",
-        "nom": "IE - CTC BAIE BASKETBALL - GRANVILLE BASKET CLUB",
-        "idOrganisme": {
-          "code": "NOR0050032"
-        }
-      },
-      "idEngagementEquipe2": {
-        "id": "200000005191706",
-        "nom": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
-        "idOrganisme": {
-          "code": "NOR0014042"
-        }
-      },
-      "salle": {
-        "libelle": "CITE DES SPORTS",
-        "commune": {
-          "libelle": "GRANVILLE"
         }
       }
     },
@@ -1789,38 +1757,6 @@
         "libelle": "GYMNASE MUNICIPAL",
         "commune": {
           "libelle": "BRETTEVILLE-SUR-ODON"
-        }
-      }
-    },
-    {
-      "id": "200000014208512",
-      "numero": "8",
-      "numeroJournee": "2",
-      "idPoule": "200000003029169",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
-      "nomEquipe1": "PAYS D'AUGE BASKETBALL - 2",
-      "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
-      "date_rencontre": "2025-11-15T00:00:00",
-      "idEngagementEquipe1": {
-        "id": "200000005221376",
-        "nom": "PAYS D'AUGE BASKETBALL",
-        "idOrganisme": {
-          "code": "NOR0014061"
-        }
-      },
-      "idEngagementEquipe2": {
-        "id": "200000005221375",
-        "nom": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
-        "idOrganisme": {
-          "code": "NOR0014042"
-        }
-      },
-      "salle": {
-        "libelle": "SALLE MOSAGNA",
-        "commune": {
-          "libelle": "PONT-L'EVEQUE"
         }
       }
     },
@@ -1981,6 +1917,70 @@
         "libelle": "GYMNASE MUNICIPAL",
         "commune": {
           "libelle": "BRETTEVILLE-SUR-ODON"
+        }
+      }
+    },
+    {
+      "id": "200000014145795",
+      "numero": "4684",
+      "numeroJournee": "6",
+      "idPoule": "200000003025071",
+      "resultatEquipe1": null,
+      "resultatEquipe2": null,
+      "joue": false,
+      "nomEquipe1": "IE - CTC BAIE BASKETBALL - GRANVILLE BASKET CLUB",
+      "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 1",
+      "date_rencontre": "2025-11-15T15:30:00",
+      "idEngagementEquipe1": {
+        "id": "200000005191707",
+        "nom": "IE - CTC BAIE BASKETBALL - GRANVILLE BASKET CLUB",
+        "idOrganisme": {
+          "code": "NOR0050032"
+        }
+      },
+      "idEngagementEquipe2": {
+        "id": "200000005191706",
+        "nom": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
+        "idOrganisme": {
+          "code": "NOR0014042"
+        }
+      },
+      "salle": {
+        "libelle": "SALLE ROBERT DUCHESNAY",
+        "commune": {
+          "libelle": "AVRANCHES"
+        }
+      }
+    },
+    {
+      "id": "200000014208512",
+      "numero": "8",
+      "numeroJournee": "2",
+      "idPoule": "200000003029169",
+      "resultatEquipe1": null,
+      "resultatEquipe2": null,
+      "joue": false,
+      "nomEquipe1": "PAYS D'AUGE BASKETBALL - 2",
+      "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
+      "date_rencontre": "2025-11-15T15:45:00",
+      "idEngagementEquipe1": {
+        "id": "200000005221376",
+        "nom": "PAYS D'AUGE BASKETBALL",
+        "idOrganisme": {
+          "code": "NOR0014061"
+        }
+      },
+      "idEngagementEquipe2": {
+        "id": "200000005221375",
+        "nom": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
+        "idOrganisme": {
+          "code": "NOR0014042"
+        }
+      },
+      "salle": {
+        "libelle": "SALLE MOSAGNA",
+        "commune": {
+          "libelle": "PONT-L'EVEQUE"
         }
       }
     },
@@ -3201,38 +3201,6 @@
       }
     },
     {
-      "id": "200000014145840",
-      "numero": "4729",
-      "numeroJournee": "9",
-      "idPoule": "200000003025071",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
-      "nomEquipe1": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
-      "nomEquipe2": "CERCLE SPORTIF BAYEUX",
-      "date_rencontre": "2025-12-06T00:00:00",
-      "idEngagementEquipe1": {
-        "id": "200000005191706",
-        "nom": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
-        "idOrganisme": {
-          "code": "NOR0014042"
-        }
-      },
-      "idEngagementEquipe2": {
-        "id": "200000005191702",
-        "nom": "CERCLE SPORTIF BAYEUX",
-        "idOrganisme": {
-          "code": "NOR0014027"
-        }
-      },
-      "salle": {
-        "libelle": "GYMNASE MUNICIPAL",
-        "commune": {
-          "libelle": "BRETTEVILLE-SUR-ODON"
-        }
-      }
-    },
-    {
       "id": "200000014146272",
       "numero": "3504",
       "numeroJournee": "9",
@@ -3241,7 +3209,7 @@
       "resultatEquipe2": null,
       "joue": false,
       "nomEquipe1": "BASKET CLUB EPOUVILLE MANEGLISE",
-      "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
+      "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 1",
       "date_rencontre": "2025-12-06T00:00:00",
       "idEngagementEquipe1": {
         "id": "200000005198901",
@@ -3293,38 +3261,6 @@
         "libelle": "PALAIS DES SPORTS PIERRE ROUX",
         "commune": {
           "libelle": "DOUVRES-LA-DELIVRANDE"
-        }
-      }
-    },
-    {
-      "id": "200000014208849",
-      "numero": "20",
-      "numeroJournee": "5",
-      "idPoule": "200000003029187",
-      "resultatEquipe1": null,
-      "resultatEquipe2": null,
-      "joue": false,
-      "nomEquipe1": "CLUB BASKET D'IFS - 3",
-      "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 2",
-      "date_rencontre": "2025-12-06T00:00:00",
-      "idEngagementEquipe1": {
-        "id": "200000005221456",
-        "nom": "CLUB BASKET D'IFS",
-        "idOrganisme": {
-          "code": "NOR0014008"
-        }
-      },
-      "idEngagementEquipe2": {
-        "id": "200000005221457",
-        "nom": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
-        "idOrganisme": {
-          "code": "NOR0014042"
-        }
-      },
-      "salle": {
-        "libelle": "GYMNASE ALICE MILLIAT",
-        "commune": {
-          "libelle": "IFS"
         }
       }
     },
@@ -3447,6 +3383,70 @@
         "nom": "PAYS D'AUGE BASKETBALL",
         "idOrganisme": {
           "code": "NOR0014061"
+        }
+      },
+      "salle": {
+        "libelle": "GYMNASE MUNICIPAL",
+        "commune": {
+          "libelle": "BRETTEVILLE-SUR-ODON"
+        }
+      }
+    },
+    {
+      "id": "200000014208849",
+      "numero": "20",
+      "numeroJournee": "5",
+      "idPoule": "200000003029187",
+      "resultatEquipe1": null,
+      "resultatEquipe2": null,
+      "joue": false,
+      "nomEquipe1": "CLUB BASKET D'IFS - 3",
+      "nomEquipe2": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 2",
+      "date_rencontre": "2025-12-06T14:30:00",
+      "idEngagementEquipe1": {
+        "id": "200000005221456",
+        "nom": "CLUB BASKET D'IFS",
+        "idOrganisme": {
+          "code": "NOR0014008"
+        }
+      },
+      "idEngagementEquipe2": {
+        "id": "200000005221457",
+        "nom": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
+        "idOrganisme": {
+          "code": "NOR0014042"
+        }
+      },
+      "salle": {
+        "libelle": "SALLE JEROME OBRIC",
+        "commune": {
+          "libelle": "IFS"
+        }
+      }
+    },
+    {
+      "id": "200000014145840",
+      "numero": "4729",
+      "numeroJournee": "9",
+      "idPoule": "200000003025071",
+      "resultatEquipe1": null,
+      "resultatEquipe2": null,
+      "joue": false,
+      "nomEquipe1": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET - 1",
+      "nomEquipe2": "CERCLE SPORTIF BAYEUX - 1",
+      "date_rencontre": "2025-12-06T15:30:00",
+      "idEngagementEquipe1": {
+        "id": "200000005191706",
+        "nom": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
+        "idOrganisme": {
+          "code": "NOR0014042"
+        }
+      },
+      "idEngagementEquipe2": {
+        "id": "200000005191702",
+        "nom": "CERCLE SPORTIF BAYEUX",
+        "idOrganisme": {
+          "code": "NOR0014027"
         }
       },
       "salle": {
@@ -5477,15 +5477,6 @@
   ],
   "rankings": [
     {
-      "engagementID": "200000005143527",
-      "pouleId": "200000003018384",
-      "position": 1,
-      "points": 9,
-      "played": 5,
-      "wins": 4,
-      "losses": 1
-    },
-    {
       "engagementID": "200000005143555",
       "pouleId": "200000003018387",
       "position": 1,
@@ -5498,61 +5489,142 @@
       "engagementID": "200000005146818",
       "pouleId": "200000003018873",
       "position": 1,
-      "points": 14,
-      "played": 7,
-      "wins": 7,
+      "points": 16,
+      "played": 8,
+      "wins": 8,
       "losses": 0
     },
     {
-      "engagementID": "200000005198886",
-      "pouleId": "200000003026059",
+      "engagementID": "200000005143527",
+      "pouleId": "200000003018384",
       "position": 2,
-      "points": 5,
-      "played": 3,
-      "wins": 2,
-      "losses": 1
-    },
-    {
-      "engagementID": "200000005153966",
-      "pouleId": "200000003019809",
-      "position": 3,
       "points": 9,
       "played": 5,
       "wins": 4,
       "losses": 1
     },
     {
+      "engagementID": "200000005153966",
+      "pouleId": "200000003019809",
+      "position": 2,
+      "points": 11,
+      "played": 6,
+      "wins": 5,
+      "losses": 1
+    },
+    {
+      "engagementID": "200000005198886",
+      "pouleId": "200000003026059",
+      "position": 2,
+      "points": 7,
+      "played": 4,
+      "wins": 3,
+      "losses": 1
+    },
+    {
+      "engagementID": "200000005207864",
+      "pouleId": "200000003027293",
+      "position": 2,
+      "points": 2,
+      "played": 1,
+      "wins": 1,
+      "losses": 0
+    },
+    {
+      "engagementID": "200000005219400",
+      "pouleId": "200000003028926",
+      "position": 2,
+      "points": 1,
+      "played": 1,
+      "wins": 0,
+      "losses": 1
+    },
+    {
+      "engagementID": "200000005221880",
+      "pouleId": "200000003029278",
+      "position": 2,
+      "points": 2,
+      "played": 1,
+      "wins": 1,
+      "losses": 0
+    },
+    {
       "engagementID": "200000005191706",
       "pouleId": "200000003025071",
       "position": 3,
-      "points": 6,
-      "played": 4,
-      "wins": 2,
+      "points": 8,
+      "played": 5,
+      "wins": 3,
       "losses": 2
+    },
+    {
+      "engagementID": "200000005207609",
+      "pouleId": "200000003027255",
+      "position": 3,
+      "points": 1,
+      "played": 1,
+      "wins": 0,
+      "losses": 1
+    },
+    {
+      "engagementID": "200000005219789",
+      "pouleId": "200000003028970",
+      "position": 3,
+      "points": 1,
+      "played": 1,
+      "wins": 0,
+      "losses": 1
+    },
+    {
+      "engagementID": "200000005221375",
+      "pouleId": "200000003029169",
+      "position": 3,
+      "points": 1,
+      "played": 1,
+      "wins": 0,
+      "losses": 1
     },
     {
       "engagementID": "200000005191633",
       "pouleId": "200000003025061",
       "position": 4,
-      "points": 5,
-      "played": 4,
-      "wins": 1,
+      "points": 7,
+      "played": 5,
+      "wins": 2,
       "losses": 3
+    },
+    {
+      "engagementID": "200000005221457",
+      "pouleId": "200000003029187",
+      "position": 4,
+      "points": 1,
+      "played": 1,
+      "wins": 0,
+      "losses": 1
+    },
+    {
+      "engagementID": "200000005221546",
+      "pouleId": "200000003029204",
+      "position": 4,
+      "points": 1,
+      "played": 1,
+      "wins": 0,
+      "losses": 1
     },
     {
       "engagementID": "200000005179810",
       "pouleId": "200000003023367",
-      "position": 8,
-      "points": 9,
-      "played": 6,
+      "position": 9,
+      "points": 10,
+      "played": 7,
       "wins": 3,
-      "losses": 3
+      "losses": 4
     }
   ],
   "metadata": {
-    "generatedAt": "2025-11-05T01:14:13.091Z",
+    "generatedAt": "2025-11-14T17:11:30.757Z",
     "clubName": "LE CLUB DE  BRETTEVILLE-SUR-ODON BASKET",
-    "totalTeams": 8,
+    "totalTeams": 16,
     "totalMatches": 160
   }
 }

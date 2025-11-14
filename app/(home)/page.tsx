@@ -6,15 +6,16 @@ import Link from "next/link";
 import Image from "next/image";
 import {Card, CardContent} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
-import courtImage from "@/assets/images/misc/terrain.png";
+import NewsCard from "@/components/actu/NewsCard";
 
 import {FormatTime, GENERAL_INFO, SOCIAL_LINKS} from "@/data/const";
 import {FFBB_LINKS, IsHome, PositionLabel, RankingData, Rankings, Rencontre, UpcomingMatchesByDate} from "@/data/ffbb";
 import {NEWS} from "@/data/news";
 import {PATHS} from "@/data/routes";
-import NewsCard from "@/components/actu/NewsCard";
 import {GetSponsors} from "@/data/sponsors";
 import {TeamByEngagementID, TeamPictureByEngagementID} from "@/data/teams";
+
+import {terrain_jpg} from '@/assets/index';
 
 const stats = [
     {icon: Users, label: "Licenciés", value: GENERAL_INFO.licenceNumber},
@@ -204,32 +205,37 @@ export default function HomePage() {
                                             <div key={date}>
                                                 <div className="text-lgtext-gray-800 font-medium mb-2">{date}</div>
                                                 <div className="space-y-2">
-                                                    {matches.map((match: Rencontre, idx) => (
-                                                        <div
-                                                            key={idx}
-                                                            className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                                                    {matches.map((match: Rencontre, index) => (
+                                                        <Link
+                                                            key={index}
+                                                            href={`${PATHS.TEAMS.path}/${IsHome(match) ? match.idEngagementEquipe1.id : match.idEngagementEquipe2.id}`}
+                                                            className="text-red-600 hover:text-red-700 text-sm ml-3"
                                                         >
-                                                            <div className="flex items-center justify-between mb-1">
-                                                                <div className="flex-1 min-w-0">
-                                                                    <p className="text-black">
-                                                                        {IsHome(match) ?
-                                                                            TeamByEngagementID(match.idEngagementEquipe1.id)?.idCompetition.code :
-                                                                            TeamByEngagementID(match.idEngagementEquipe2.id)?.idCompetition.code}
-                                                                        {" "}
-                                                                        <span
-                                                                            className="text-sm text-gray-600">vs {IsHome(match) ? match.nomEquipe2 : match.nomEquipe1}</span>
-                                                                    </p>
-                                                                </div>
-                                                                <Badge
-                                                                    variant={IsHome(match) ? "default" : "outline"}
-                                                                    className={`${IsHome(match) ? "bg-red-600 text-white" : ""} shrink-0 ml-2`}
-                                                                >
-                                                                    {IsHome(match) ? "Dom." : "Ext."}
-                                                                </Badge>
-                                                            </div>
                                                             <div
-                                                                className="text-sm text-gray-600">{FormatTime(match.date_rencontre)}</div>
-                                                        </div>
+                                                                className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                                                            >
+                                                                <div className="flex items-center justify-between mb-1">
+                                                                    <div className="flex-1 min-w-0">
+                                                                        <p className="text-black">
+                                                                            {IsHome(match) ?
+                                                                                TeamByEngagementID(match.idEngagementEquipe1.id)?.idCompetition.code :
+                                                                                TeamByEngagementID(match.idEngagementEquipe2.id)?.idCompetition.code}
+                                                                            {" "}
+                                                                            <span
+                                                                                className="text-sm text-gray-600">vs {IsHome(match) ? match.nomEquipe2 : match.nomEquipe1}</span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <Badge
+                                                                        variant={IsHome(match) ? "default" : "outline"}
+                                                                        className={`${IsHome(match) ? "bg-red-600 text-white" : ""} shrink-0 ml-2`}
+                                                                    >
+                                                                        {IsHome(match) ? "Dom." : "Ext."}
+                                                                    </Badge>
+                                                                </div>
+                                                                <div
+                                                                    className="text-sm text-gray-600">{FormatTime(match.date_rencontre)}</div>
+                                                            </div>
+                                                        </Link>
                                                     ))}
                                                 </div>
                                             </div>
@@ -321,7 +327,7 @@ export default function HomePage() {
                     <h2 className="text-center mb-8 text-red-600">Notre Salle</h2>
                     <div className="rounded-lg overflow-hidden shadow-2xl">
                         <Image
-                            src={courtImage}
+                            src={terrain_jpg}
                             alt="LCBO Basket Court"
                             className="w-full h-1/2 object-cover object-center"
                         />

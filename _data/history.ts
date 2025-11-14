@@ -1,13 +1,15 @@
-import lcboneige from "@/assets/images/history/LCBO-Basket-1972-sous-la-neige.png"
-import lcboneige2 from "@/assets/images/history/LCBO-Basket-1972-match-dans-la-neige.png"
-import lcbohistoire from "@/assets/images/history/LCBO_Basket_histoire.jpg"
+import {
+    LCBO_Basket_1972_sous_la_neige_jpg,
+    LCBO_Basket_1972_match_dans_la_neige_jpg,
+    LCBO_Basket_histoire_jpg
+} from "@/assets/index"
 
 export const HistoryPeriods = [
     {
         year: "1972-1975",
         title: "Les débuts",
         content: "Le LCBO Basket est né en 1972 à Bretteville-sur-Odon, à l'initiative de passionnés qui jouaient alors en plein air dans la cour de l'école primaire. Dès ses premières saisons, le club s'impose avec plusieurs équipes championnes du Calvados et inaugure son gymnase en 1975 lors d'un match de gala face au Caen Basket Calvados.",
-        images: [lcboneige, lcboneige2]
+        images: [LCBO_Basket_1972_sous_la_neige_jpg, LCBO_Basket_1972_match_dans_la_neige_jpg]
     },
     {
         year: "Fin des années 70",
@@ -28,7 +30,7 @@ export const HistoryPeriods = [
         year: "Années 2010-2020",
         title: "Coopération et anniversaire",
         content: "Les années 2000 et 2010 renforcent cette orientation avec une politique sportive structurée et une coopération interclubs. En 2016, une CTC est créée avec l'ES Carpiquet, permettant de mutualiser les forces. Puis, en 2022, le LCBO fête ses 50 ans, un moment fort marqué par la présence de ses anciennes figures et l'organisation d'un tournoi 3×3.",
-        images: [lcbohistoire]
+        images: [LCBO_Basket_histoire_jpg]
     },
     {
         year: "Aujourd'hui",

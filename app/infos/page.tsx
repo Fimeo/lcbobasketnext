@@ -3,7 +3,7 @@
 import {motion} from "motion/react";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Clock, Euro, ExternalLink, MapPin} from "lucide-react";
-import planningImage from "@/assets/images/misc/planning20252026.jpg"
+import {planning20252026_jpg} from '@/assets/index';
 import {PATHS} from "@/data/routes";
 import {GYMNASES, TARIFS} from "@/data/infos";
 import Link from 'next/link';
@@ -152,7 +152,7 @@ export default function InfosPage() {
 
                             <div className="bg-white rounded-lg overflow-hidden border border-gray-200 mb-6">
                                 <Image
-                                    src={planningImage}
+                                    src={planning20252026_jpg}
                                     alt="Planning des entraînements LCBO Basket"
                                     className="w-full h-auto"
                                 />

@@ -1,11 +1,10 @@
 'use client'
 
 import {motion} from "motion/react";
-import {MajorSponsors, OfficialSponsors, OtherSponsors} from "@/data/sponsors";
+import {Partners, OfficialSponsors, OtherSponsors, TechnicalPartners} from "@/data/sponsors";
 import {GENERAL_INFO} from "@/data/const";
 import {Mail} from "lucide-react";
 import SponsorCard from "./components/SponsorCard";
-import SponsorCardLite from "./components/SponsorCardLite";
 
 export default function SponsorsPage() {
     return (
@@ -34,13 +33,13 @@ export default function SponsorsPage() {
                     transition={{duration: 0.6}}
                     className="mb-16"
                 >
-                    <h2 className="mb-8 text-red-600">Partenaires Majeurs</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {MajorSponsors().map((sponsor, index) => (
+                    <h2 className="mb-8 text-red-600">Partenaires</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {Partners().map((sponsor, index) => (
                             <motion.div
                                 key={index}
-                                initial={{scale: 0.95, opacity: 0}}
-                                whileInView={{scale: 1, opacity: 1}}
+                                initial={{y: 20, opacity: 0}}
+                                whileInView={{y: 0, opacity: 1}}
                                 viewport={{once: true}}
                                 transition={{delay: index * 0.1, duration: 0.5}}
                             >
@@ -68,7 +67,31 @@ export default function SponsorsPage() {
                                 viewport={{once: true}}
                                 transition={{delay: index * 0.1, duration: 0.5}}
                             >
-                                <SponsorCardLite sponsor={sponsor}/>
+                                <SponsorCard sponsor={sponsor}/>
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.section>
+
+                {/* Partenaires Techniques */}
+                <motion.section
+                    initial={{y: 30, opacity: 0}}
+                    whileInView={{y: 0, opacity: 1}}
+                    viewport={{once: true}}
+                    transition={{duration: 0.6}}
+                    className="mb-16"
+                >
+                    <h2 className="mb-8 text-red-600">Partenaires Techniques</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {TechnicalPartners().map((sponsor, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{y: 20, opacity: 0}}
+                                whileInView={{y: 0, opacity: 1}}
+                                viewport={{once: true}}
+                                transition={{delay: index * 0.1, duration: 0.5}}
+                            >
+                                <SponsorCard sponsor={sponsor}/>
                             </motion.div>
                         ))}
                     </div>
@@ -91,7 +114,7 @@ export default function SponsorsPage() {
                                 whileInView={{y: 0, opacity: 1}}
                                 viewport={{once: true}}
                             >
-                                <SponsorCardLite sponsor={sponsor}/>
+                                <SponsorCard sponsor={sponsor}/>
                             </motion.div>
                         ))}
                     </div>

@@ -1,6 +1,0 @@
-# robots.txt for LCBO Basket
-User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: /sitemap.xml

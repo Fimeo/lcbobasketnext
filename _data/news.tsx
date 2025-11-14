@@ -1,7 +1,9 @@
-import news20251017 from '@/assets/images/news/news20251017.jpeg';
-import news20250923 from '@/assets/images/news/news20250923.jpeg';
-import news20251102 from '@/assets/images/news/news20251102.jpeg';
-import news20251105 from '@/assets/images/news/news20251105.jpeg';
+import {
+    news20251017_jpg,
+    news20250923_jpg,
+    news20251105_jpg,
+    news20251102_jpg
+} from '@/assets/index'
 import {GENERAL_INFO} from "@/data/const";
 import {StaticImageData} from "next/image";
 import {ReactElement} from "react";
@@ -23,7 +25,7 @@ export function NEWS(): News[] {
             title: "Ouverture de la boutique",
             date: "Samedi 15 novembre 2025",
             link: "https://www.instagram.com/lcbobasket",
-            image: news20251105,
+            image: news20251105_jpg,
             location: GENERAL_INFO.address,
             description: <div>
                 <p>La boutique du LCBO Basket est désormais ouverte !</p>
@@ -52,7 +54,7 @@ export function NEWS(): News[] {
             slug: "presentation-equipes-2025",
             title: "Présentation des équipes",
             date: "Samedi 15 novembre 2025",
-            image: news20251102,
+            image: news20251102_jpg,
             link: "https://www.instagram.com/p/DQmoSmZlI4L",
             location: GENERAL_INFO.address,
             description: <div>
@@ -81,7 +83,7 @@ export function NEWS(): News[] {
             slug: "octobre-rose-2025",
             title: "Octobre rose",
             date: "Dimanche 26 octobre 2025",
-            image: news20251017,
+            image: news20251017_jpg,
             link: "https://instagram.com/p/DQREMBwgDjo",
             location: GENERAL_INFO.address,
             description: <div>
@@ -110,7 +112,7 @@ export function NEWS(): News[] {
             slug: "halloween-camp-2025",
             title: "Halloween Camp",
             date: "Du 20 au 24 octobre",
-            image: news20250923,
+            image: news20250923_jpg,
             link: "https://instagram.com/p/DO8M2r5iHTY",
             location: GENERAL_INFO.address,
             description: <div>
