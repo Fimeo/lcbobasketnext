@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import {notFound} from "next/navigation";
 import type {Metadata} from "next";
 import {Engagement, TeamByEngagementID, TeamPictureByEngagementID, Teams} from "@/data/teams";
 import Link from "next/link";
@@ -15,12 +15,12 @@ type TeamPageProps = {
 };
 
 export async function generateMetadata(
-    { params }: TeamPageProps,
+    {params}: TeamPageProps,
 ): Promise<Metadata> {
-    const { engagement } = await params
+    const {engagement} = await params
 
     const team = TeamByEngagementID(engagement)
-    if (!team) return { title: "Équipe introuvable" };
+    if (!team) return {title: "Équipe introuvable"};
 
     return {
         title: `${team.idCompetition.code} | Nos équipes`,
@@ -31,16 +31,16 @@ export async function generateMetadata(
     }
 }
 
-export default async function TeamPage({ params }: TeamPageProps) {
-    const { engagement } = await params
+export default async function TeamPage({params}: TeamPageProps) {
+    const {engagement} = await params
     const teams = Teams()
-    const team = teams.find((t:Engagement) => t.id === engagement);
+    const team = teams.find((t: Engagement) => t.id === engagement);
 
     if (!team) notFound();
 
     return (
         <main className="p-6 sm:p-3">
-            <TeamDetailComponent team={team} />
+            <TeamDetailComponent team={team}/>
         </main>
     );
 }
@@ -69,7 +69,7 @@ export function TeamDetailComponent({team}: TeamDetailsCardProps) {
                                 href={PATHS.TEAMS.path}
                                 className="inline-flex items-center gap-2 text-white hover:text-red-400 transition-colors mb-4"
                             >
-                                <ArrowLeft size={20} />
+                                <ArrowLeft size={20}/>
                                 <span>Retour aux équipes</span>
                             </Link>
                             <h1 className="text-white mb-4">
@@ -111,7 +111,8 @@ export function TeamDetailComponent({team}: TeamDetailsCardProps) {
                                         <div>
                                             <p className="text-sm text-gray-600">Division</p>
                                             <p>
-                                                <span className="text-black">{team.idCompetition.code}</span> - <span className="text-gray-600">{team.idCompetition.nom}</span>
+                                                <span className="text-black">{team.idCompetition.code}</span> - <span
+                                                className="text-gray-600">{team.idCompetition.nom}</span>
                                             </p>
                                         </div>
                                         {team.idPoule && (
@@ -126,7 +127,7 @@ export function TeamDetailComponent({team}: TeamDetailsCardProps) {
                                 {ranking && (
                                     <div>
                                         <h3 className="text-red-600 mb-4 flex items-center gap-2">
-                                            <Trophy size={24} className="text-red-600" />
+                                            <Trophy size={24} className="text-red-600"/>
                                             Classement Actuel
                                         </h3>
                                         <div className="bg-red-50 p-4 rounded-lg">
@@ -166,7 +167,7 @@ export function TeamDetailComponent({team}: TeamDetailsCardProps) {
                                                 className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors text-sm mb-3"
                                             >
                                                 <span>Voir le classement complet sur FFBB</span>
-                                                <ExternalLink size={16} />
+                                                <ExternalLink size={16}/>
                                             </Link>
                                         </div>
                                     </div>
@@ -200,8 +201,10 @@ export function TeamDetailComponent({team}: TeamDetailsCardProps) {
                                             {/* Date et heure */}
                                             <div className="col-span-1">
                                                 <p className="text-black">
-                                                    <span className="text-gray-600">{FormatShortDate(match.date_rencontre)}</span><br/>
-                                                    <span className="text-gray-600">{FormatTime(match.date_rencontre)}</span>
+                                                    <span
+                                                        className="text-gray-600">{FormatShortDate(match.date_rencontre)}</span><br/>
+                                                    <span
+                                                        className="text-gray-600">{FormatTime(match.date_rencontre)}</span>
                                                 </p>
                                             </div>
 
@@ -219,23 +222,25 @@ export function TeamDetailComponent({team}: TeamDetailsCardProps) {
                                             <div className="text-right col-span-2">
                                                 {match.joue && match.resultatEquipe1 && match.resultatEquipe2 ? (
                                                     <div className="flex items-center justify-end gap-3">
-                                                        <span className={`${match.resultatEquipe1 > match.resultatEquipe2 ? 'text-red-600' : 'text-gray-400'}`}>
+                                                        <span
+                                                            className={`${match.resultatEquipe1 > match.resultatEquipe2 ? 'text-red-600' : 'text-gray-400'}`}>
                                                           {match.resultatEquipe1}
                                                         </span>
                                                         <div className="flex items-center gap-1">
                                                             {match.resultatEquipe1 > match.resultatEquipe2 ? (
-                                                                <ChevronLeft size={16} className="text-red-600" />
+                                                                <ChevronLeft size={16} className="text-red-600"/>
                                                             ) : (
-                                                                <ChevronRight size={16} className="text-gray-400" />
+                                                                <ChevronRight size={16} className="text-gray-400"/>
                                                             )}
                                                             <span className="text-black">VS</span>
                                                             {match.resultatEquipe1 < match.resultatEquipe2 ? (
-                                                                <ChevronRight size={16} className="text-red-600" />
+                                                                <ChevronRight size={16} className="text-red-600"/>
                                                             ) : (
-                                                                <ChevronLeft size={16} className="text-gray-400" />
+                                                                <ChevronLeft size={16} className="text-gray-400"/>
                                                             )}
                                                         </div>
-                                                        <span className={`${match.resultatEquipe2 > match.resultatEquipe1 ? 'text-red-600' : 'text-gray-400'}`}>{match.resultatEquipe2}</span>
+                                                        <span
+                                                            className={`${match.resultatEquipe2 > match.resultatEquipe1 ? 'text-red-600' : 'text-gray-400'}`}>{match.resultatEquipe2}</span>
                                                     </div>
                                                 ) : (
                                                     <Badge className="bg-red-600 text-white hover:bg-red-700">
@@ -262,7 +267,7 @@ export function TeamDetailComponent({team}: TeamDetailsCardProps) {
                                             <Badge
                                                 className={IsHome(match) ? "bg-red-600 text-white hover:bg-red-700" : ""}
                                             >
-                                                {IsHome(match)? "Domicile" : "Extérieur"}
+                                                {IsHome(match) ? "Domicile" : "Extérieur"}
                                             </Badge>
                                         </div>
 
@@ -284,15 +289,15 @@ export function TeamDetailComponent({team}: TeamDetailsCardProps) {
                                                 </div>
                                                 <div className="flex items-center gap-1">
                                                     {match.resultatEquipe1 > match.resultatEquipe2 ? (
-                                                        <ChevronLeft size={20} className="text-red-600" />
+                                                        <ChevronLeft size={20} className="text-red-600"/>
                                                     ) : (
-                                                        <ChevronRight size={20} className="text-gray-400" />
+                                                        <ChevronRight size={20} className="text-gray-400"/>
                                                     )}
                                                     <span className="text-gray-600">VS</span>
                                                     {match.resultatEquipe1 < match.resultatEquipe2 ? (
-                                                        <ChevronRight size={20} className="text-red-600" />
+                                                        <ChevronRight size={20} className="text-red-600"/>
                                                     ) : (
-                                                        <ChevronLeft size={20} className="text-gray-400" />
+                                                        <ChevronLeft size={20} className="text-gray-400"/>
                                                     )}
                                                 </div>
                                                 <div className="text-center">

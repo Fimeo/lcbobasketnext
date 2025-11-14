@@ -33,46 +33,48 @@ export default function SponsorCard({sponsor}: SponsorCardProps) {
                     {sponsor.phone && (
                         <div className="flex items-center gap-2 text-sm">
                             <Phone size={16} className="text-red-600 flex-shrink-0"/>
-                            <a className="text-gray-600" href={"tel:"+sponsor.phone}>{sponsor.phone}</a>
+                            <a className="text-gray-600" href={"tel:" + sponsor.phone}>{sponsor.phone}</a>
                         </div>
                     )}
                     {sponsor.email && (
                         <div className="flex items-center gap-2 text-sm">
                             <Mail size={16} className="text-red-600 flex-shrink-0"/>
-                            <a className="text-gray-600" href={"mailto:"+sponsor.email}>{sponsor.email}</a>
+                            <a className="text-gray-600" href={"mailto:" + sponsor.email}>{sponsor.email}</a>
                         </div>
                     )}
                 </div>
-                {sponsor.website && (
-                    <a
-                        href={sponsor.website}
-                        target="_blank"
-                        className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors text-sm"
-                    >
-                        <span>Visiter le site web</span>
-                        <ExternalLink size={14}/>
-                    </a>
-                )}
-                {sponsor.facebook && (
-                    <a
-                        href={sponsor.facebook}
-                        target="_blank"
-                        className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors text-sm"
-                    >
-                        <Facebook size={20}/>
-                        <span>Page facebook</span>
-                    </a>
-                )}
-                {sponsor.instragram && (
-                    <a
-                        href={sponsor.instragram}
-                        target="_blank"
-                        className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors text-sm"
-                    >
-                        <Instagram size={20}/>
-                        <span>Compte Instagram</span>
-                    </a>
-                )}
+                <div className="flex flex-wrap flex-col gap-2">
+                    {sponsor.website && (
+                        <a
+                            href={sponsor.website}
+                            target="_blank"
+                            className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors text-sm"
+                        >
+                            <span>Visiter le site web</span>
+                            <ExternalLink size={14}/>
+                        </a>
+                    )}
+                    {sponsor.facebook && (
+                        <a
+                            href={sponsor.facebook}
+                            target="_blank"
+                            className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors text-sm"
+                        >
+                            <Facebook size={20}/>
+                            <span>Page facebook</span>
+                        </a>
+                    )}
+                    {sponsor.instragram && (
+                        <a
+                            href={sponsor.instragram}
+                            target="_blank"
+                            className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors text-sm"
+                        >
+                            <Instagram size={20}/>
+                            <span>Compte Instagram</span>
+                        </a>
+                    )}
+                </div>
             </CardContent>
         </Card>
     );

@@ -1,7 +1,7 @@
 'use client'
 
 import {motion} from "motion/react";
-import {Partners, OfficialSponsors, MainSponsors, TechnicalPartners} from "@/data/sponsors";
+import {MainSponsors, OfficialSponsors, Partners, TechnicalPartners} from "@/data/sponsors";
 import {GENERAL_INFO} from "@/data/const";
 import {Mail} from "lucide-react";
 import SponsorCard from "./components/SponsorCard";
@@ -33,7 +33,7 @@ export default function SponsorsPage() {
                     transition={{duration: 0.2}}
                     className="mb-16"
                 >
-                    <h2 className="mb-8 text-red-600">Partenaires</h2>
+                    <h2 className="mb-8 text-red-600">Sponsors principaux</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {MainSponsors().map((sponsor, index) => (
                             <motion.div
@@ -49,7 +49,7 @@ export default function SponsorsPage() {
                     </div>
                 </motion.section>
 
-                {/* Partenaires Officiels */}
+                {/* Partenaires */}
                 <motion.section
                     initial={{y: 30, opacity: 0}}
                     whileInView={{y: 0, opacity: 1}}
@@ -57,15 +57,14 @@ export default function SponsorsPage() {
                     transition={{duration: 0.2}}
                     className="mb-16"
                 >
-                    <h2 className="mb-8 text-red-600">Partenaires Officiels</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {OfficialSponsors().map((sponsor, index) => (
+                    <h2 className="mb-8 text-red-600">Partenaires</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {Partners().map((sponsor, index) => (
                             <motion.div
                                 key={index}
                                 initial={{y: 20, opacity: 0}}
                                 whileInView={{y: 0, opacity: 1}}
                                 viewport={{once: true}}
-                                transition={{delay: index * 0.1, duration: 0.5}}
                             >
                                 <SponsorCard sponsor={sponsor}/>
                             </motion.div>
@@ -97,7 +96,7 @@ export default function SponsorsPage() {
                     </div>
                 </motion.section>
 
-                {/* Autres Partenaires */}
+                {/* Partenaires Officiels */}
                 <motion.section
                     initial={{y: 30, opacity: 0}}
                     whileInView={{y: 0, opacity: 1}}
@@ -105,14 +104,15 @@ export default function SponsorsPage() {
                     transition={{duration: 0.2}}
                     className="mb-16"
                 >
-                    <h2 className="mb-8 text-red-600">Autres Partenaires</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {Partners().map((sponsor, index) => (
+                    <h2 className="mb-8 text-red-600">Partenaires Institutionnels</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {OfficialSponsors().map((sponsor, index) => (
                             <motion.div
                                 key={index}
                                 initial={{y: 20, opacity: 0}}
                                 whileInView={{y: 0, opacity: 1}}
                                 viewport={{once: true}}
+                                transition={{delay: index * 0.1, duration: 0.5}}
                             >
                                 <SponsorCard sponsor={sponsor}/>
                             </motion.div>

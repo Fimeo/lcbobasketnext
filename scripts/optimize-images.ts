@@ -42,7 +42,7 @@ async function optimizeImage(inputPath: string, outputDir: string) {
 async function run() {
     if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true })
 
-    const files = glob.sync(`${SOURCE_DIR}/**/*.{jpg,jpeg,png,webp}`)
+    const files = glob.sync(`${SOURCE_DIR}/**/*.{jpg,jpeg,png,webp,svg}`)
 
     console.log(`Found ${files.length} images to optimize...`)
     for (const file of files) {

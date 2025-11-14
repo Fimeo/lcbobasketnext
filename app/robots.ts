@@ -1,4 +1,4 @@
-import type { MetadataRoute } from 'next'
+import type {MetadataRoute} from 'next'
 import {GENERAL_INFO} from "@/data/const";
 
 export default function robots(): MetadataRoute.Robots {
@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
                 allow: ['/'],
             },
         ],
-        sitemap: GENERAL_INFO.baseURL+'/sitemap.xml',
+        sitemap: GENERAL_INFO.baseURL + '/sitemap.xml',
     }
 }

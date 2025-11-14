@@ -1,9 +1,4 @@
-import {
-    news20251017_jpg,
-    news20250923_jpg,
-    news20251105_jpg,
-    news20251102_jpg
-} from '@/assets/index'
+import {news20250923_jpg, news20251017_jpg, news20251102_jpg, news20251105_jpg} from '@/assets/index'
 import {GENERAL_INFO} from "@/data/const";
 import {StaticImageData} from "next/image";
 import {ReactElement} from "react";
@@ -47,7 +42,8 @@ export function NEWS(): News[] {
                     <li>Lundi 10 novembre de 17h30 à 19h</li>
                     <li>Mercredi 19 novembre de 17h à 19h</li>
                 </ul>
-                <p>+ vous pourrez également venir essayer lors de la soirée de présentation des équipes le 15 novembre</p>
+                <p>+ vous pourrez également venir essayer lors de la soirée de présentation des équipes le 15
+                    novembre</p>
             </div>
         },
         {

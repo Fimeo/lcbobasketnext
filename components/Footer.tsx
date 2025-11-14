@@ -124,7 +124,7 @@ export default async function Footer() {
 
                 {/* Sponsors */}
                 <div className="border-t border-gray-800 pt-8 mb-8">
-                    <h4 className="text-white text-center mb-4 text-sm">Nos Partenaires Principaux</h4>
+                    <h4 className="text-white text-center mb-4 text-sm">Sponsors Principaux</h4>
                     <div className="flex flex-wrap justify-center items-center gap-6">
                         {MainSponsors().map((sponsor, index) => (
                             <div
@@ -156,6 +156,9 @@ export default async function Footer() {
                     <p className="text-gray-400 text-sm">
                         &copy; 2025 LCBO Basket. Tous droits réservés.
                     </p>
+                    <Link href={"/legal"}>
+                        Mentions légales
+                    </Link>
                 </div>
             </div>
         </footer>

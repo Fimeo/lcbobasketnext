@@ -8,13 +8,13 @@ import {GENERAL_INFO} from "@/data/const";
 
 export const metadata: Metadata = {
     metadataBase: new URL(GENERAL_INFO.baseURL),
-    title: { default: 'LCBO Basket', template: '%s | LCBO Basket' },
+    title: {default: 'LCBO Basket', template: '%s | LCBO Basket'},
     description: 'LCBO Basket - Passion, Excellence, Esprit d\'Équipe',
     openGraph: {
         title: 'LCBO Basket',
         description: 'LCBO Basket - Passion, Excellence, Esprit d\'Équipe',
         url: GENERAL_INFO.baseURL,
-        images: [{ url: GENERAL_INFO.baseURL+'/logo.png' }]
+        images: [{url: GENERAL_INFO.baseURL + '/logo.png'}]
     },
 }
 
@@ -34,7 +34,7 @@ export default function RootLayout({
         <div className="min-h-screen flex flex-col bg-white">
             <Navigation/>
             <main className="flex-1">
-                <ScrollToTop />
+                <ScrollToTop/>
                 {children}
             </main>
             <Footer/>

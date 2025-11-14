@@ -69,14 +69,14 @@ export function Matches(): Rencontre[] {
     return data.matches as Rencontre[];
 }
 
-export function RankingFromEngagement(engagement: string): RankingData|undefined {
+export function RankingFromEngagement(engagement: string): RankingData | undefined {
     return Rankings().find((ranking: RankingData) => {
         return ranking.engagementID === engagement;
     })
 }
 
-export function NextMatchByEngagement(engagement: string): Rencontre|undefined {
-    return Matches().filter((e) => new Date(e.date_rencontre) >= new Date()).find((e) => !e.joue &&(e.idEngagementEquipe1.id === engagement || e.idEngagementEquipe2.id === engagement))
+export function NextMatchByEngagement(engagement: string): Rencontre | undefined {
+    return Matches().filter((e) => new Date(e.date_rencontre) >= new Date()).find((e) => !e.joue && (e.idEngagementEquipe1.id === engagement || e.idEngagementEquipe2.id === engagement))
 }
 
 export function MatchByEngagement(engagement: string): Rencontre[] {

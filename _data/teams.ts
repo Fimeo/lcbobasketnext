@@ -1,11 +1,12 @@
 import data from './ffbb_data.json';
 
 import {
-    Pnf_jpg,
-    R3_jpg,
     d2_jpg,
+    Pnf_jpg,
     pnm_jpg,
     r2f_jpg,
+    R3_jpg,
+    terrain_jpg as defImage,
     u11F_jpg,
     u11g_jpg,
     u13_jpg,
@@ -16,10 +17,6 @@ import {
     u7_2_2_jpg,
     u9f_jpg,
     u9g_jpg
-} from '@/assets/index'
-
-import {
-    terrain_jpg as defImage
 } from '@/assets/index'
 
 import {StaticImageData} from "next/image";

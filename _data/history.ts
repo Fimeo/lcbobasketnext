@@ -1,6 +1,6 @@
 import {
-    LCBO_Basket_1972_sous_la_neige_jpg,
     LCBO_Basket_1972_match_dans_la_neige_jpg,
+    LCBO_Basket_1972_sous_la_neige_jpg,
     LCBO_Basket_histoire_jpg
 } from "@/assets/index"
 

@@ -65,7 +65,8 @@ export default function HomePage() {
                 </div>
 
                 {/* Dark overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-br from-black-900/90 via-black/20 to-black-900/90"></div>
+                <div
+                    className="absolute inset-0 bg-gradient-to-br from-black-900/90 via-black/20 to-black-900/90"></div>
 
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
@@ -167,7 +168,8 @@ export default function HomePage() {
                                                         <div className="flex items-center">
                                                             <p className="text-black">{TeamByEngagementID(rank.engagementID)?.idCompetition.code}</p>
                                                         </div>
-                                                        <Badge className="bg-red-600 text-white hover:bg-red-700 shrink-0">
+                                                        <Badge
+                                                            className="bg-red-600 text-white hover:bg-red-700 shrink-0">
                                                             {PositionLabel(rank.position)}
                                                         </Badge>
                                                     </div>
@@ -207,7 +209,7 @@ export default function HomePage() {
                                     </h3>
                                     <div className="space-y-4">
                                         {/* Group matches by date */}
-                                        {Object.entries(UpcomingMatchesByDate()).slice(0,1).map(([date, matches]) => (
+                                        {Object.entries(UpcomingMatchesByDate()).slice(0, 1).map(([date, matches]) => (
                                             <div key={date}>
                                                 <div className="text-lgtext-gray-800 font-medium mb-2">{date}</div>
                                                 <div className="space-y-2">
@@ -323,13 +325,13 @@ export default function HomePage() {
 
             {/* Court Image Section */}
             <section className="py-16 bg-gray-50">
-                <div className="w-2/3 mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl md:w-1/3 mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-center mb-8 text-red-600">Notre Salle</h2>
                     <div className="rounded-lg overflow-hidden shadow-2xl">
                         <Image
                             src={terrain_jpg}
                             alt="LCBO Basket Court"
-                            className="w-full h-1/2 object-cover object-center"
+                            className="h-full  object-center"
                         />
                     </div>
                 </div>

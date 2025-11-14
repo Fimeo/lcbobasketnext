@@ -43,73 +43,78 @@ export default function TeamsPage() {
                             const ranking = RankingFromEngagement(team.id);
                             const nextMatch = NextMatchByEngagement(team.id);
                             return (
-                            <motion.div
-                                key={index}
-                                initial={{x: index % 2 === 0 ? -30 : 30, opacity: 0}}
-                                whileInView={{x: 0, opacity: 1}}
-                                viewport={{once: true}}
-                                transition={{duration: 0.4}}
-                                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-                            >
-                                <Link
-                                    href={`/equipes/${team.id}`}
+                                <motion.div
+                                    key={index}
+                                    initial={{x: index % 2 === 0 ? -30 : 30, opacity: 0}}
+                                    whileInView={{x: 0, opacity: 1}}
+                                    viewport={{once: true}}
+                                    transition={{duration: 0.4}}
+                                    className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
                                 >
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
-                                    <div className="md:col-span-1 h-64 md:h-auto">
-                                        <Image
-                                            src={TeamPictureByEngagementID(team.id)}
-                                            alt={team.idCompetition.nom}
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                    <div className="md:col-span-2 p-6">
-                                        <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                                            <div>
-                                                <h3 className="text-black mb-2">{team.idCompetition.nom}</h3>
-                                                <Badge className="bg-red-600 text-white hover:bg-red-700 mb-2">
-                                                    {team.idCompetition.code}
-                                                </Badge>
+                                    <Link
+                                        href={`/equipes/${team.id}`}
+                                    >
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+                                            <div className="md:col-span-1 h-64 md:h-auto">
+                                                <Image
+                                                    src={TeamPictureByEngagementID(team.id)}
+                                                    alt={team.idCompetition.nom}
+                                                    className="w-full h-full object-cover"
+                                                />
                                             </div>
-                                            {ranking !== undefined && (
-                                                <div className="bg-red-50 px-4 py-2 rounded-lg">
-                                                    <p className="text-sm text-gray-600">Classement</p>
-                                                    <p className="text-red-600">{PositionLabel(ranking.position)}</p>
+                                            <div className="md:col-span-2 p-6">
+                                                <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+                                                    <div>
+                                                        <h3 className="text-black mb-2">{team.idCompetition.nom}</h3>
+                                                        <Badge className="bg-red-600 text-white hover:bg-red-700 mb-2">
+                                                            {team.idCompetition.code}
+                                                        </Badge>
+                                                    </div>
+                                                    {ranking !== undefined && (
+                                                        <div className="bg-red-50 px-4 py-2 rounded-lg">
+                                                            <p className="text-sm text-gray-600">Classement</p>
+                                                            <p className="text-red-600">{PositionLabel(ranking.position)}</p>
+                                                        </div>
+                                                    )}
                                                 </div>
-                                            )}
-                                        </div>
 
-                                        {nextMatch !== undefined && (
-                                            <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                                                <div className="flex items-center gap-2 mb-2">
-                                                    <Calendar size={16} className="text-red-600"/>
-                                                    <p className="text-black">Prochain match</p>
-                                                </div>
-                                                <div className="flex flex-wrap items-center gap-3">
-                                                    <Badge variant={IsHome(nextMatch) ? "default" : "outline"}
-                                                           className={IsHome(nextMatch) ? "bg-red-600 text-white" : ""}>
-                                                        {IsHome(nextMatch) ? "Domicile" : "Extérieur"}
-                                                    </Badge>
-                                                    <span className="text-gray-600">vs {IsHome(nextMatch) ? nextMatch.nomEquipe2 : nextMatch.nomEquipe1}</span>
-                                                    <span className="text-gray-600">•</span>
-                                                    <span className="text-gray-600">{FormatShortDate(nextMatch.date_rencontre)} {FormatTime(nextMatch.date_rencontre)}</span>
-                                                </div>
-                                                {nextMatch.salle != undefined && (
-                                                    <div className="flex items-center gap-2 mt-2 text-sm text-gray-600">
-                                                        <MapPin size={14} className="text-red-600"/>
-                                                        <span>{nextMatch.salle.libelle} {nextMatch.salle.commune.libelle}</span>
+                                                {nextMatch !== undefined && (
+                                                    <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                                                        <div className="flex items-center gap-2 mb-2">
+                                                            <Calendar size={16} className="text-red-600"/>
+                                                            <p className="text-black">Prochain match</p>
+                                                        </div>
+                                                        <div className="flex flex-wrap items-center gap-3">
+                                                            <Badge variant={IsHome(nextMatch) ? "default" : "outline"}
+                                                                   className={IsHome(nextMatch) ? "bg-red-600 text-white" : ""}>
+                                                                {IsHome(nextMatch) ? "Domicile" : "Extérieur"}
+                                                            </Badge>
+                                                            <span
+                                                                className="text-gray-600">vs {IsHome(nextMatch) ? nextMatch.nomEquipe2 : nextMatch.nomEquipe1}</span>
+                                                            <span className="text-gray-600">•</span>
+                                                            <span
+                                                                className="text-gray-600">{FormatShortDate(nextMatch.date_rencontre)} {FormatTime(nextMatch.date_rencontre)}</span>
+                                                        </div>
+                                                        {nextMatch.salle != undefined && (
+                                                            <div
+                                                                className="flex items-center gap-2 mt-2 text-sm text-gray-600">
+                                                                <MapPin size={14} className="text-red-600"/>
+                                                                <span>{nextMatch.salle.libelle} {nextMatch.salle.commune.libelle}</span>
+                                                            </div>
+                                                        )}
                                                     </div>
                                                 )}
+                                                <div
+                                                    className="flex items-center justify-end gap-2 text-red-600 hover:text-red-700 transition-colors">
+                                                    <span>Voir les détails</span>
+                                                    <ExternalLink size={16}/>
+                                                </div>
                                             </div>
-                                        )}
-                                        <div className="flex items-center justify-end gap-2 text-red-600 hover:text-red-700 transition-colors">
-                                            <span>Voir les détails</span>
-                                            <ExternalLink size={16}/>
                                         </div>
-                                    </div>
-                                </div>
-                                </Link>
-                            </motion.div>
-                        )})}
+                                    </Link>
+                                </motion.div>
+                            )
+                        })}
                     </div>
                 </motion.section>
 
@@ -140,25 +145,26 @@ export default function TeamsPage() {
                                         <Link
                                             href={`${PATHS.TEAMS.path}/${team.id}`}
                                         >
-                                        <div className="h-48 overflow-hidden">
-                                            <Image
-                                                src={TeamPictureByEngagementID(team.id)}
-                                                alt={team.idCompetition.nom}
-                                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                                            />
-                                        </div>
-                                        <div className="p-5">
-                                            <h4 className="text-black mb-2">{team.idCompetition.nom}</h4>
-                                            <div className="flex flex-wrap gap-2 justify-between">
-                                                <Badge className="bg-red-600 text-white hover:bg-red-700">
-                                                    {team.idCompetition.code}
-                                                </Badge>
-                                                <div className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors">
-                                                    <span>Voir les détails</span>
-                                                    <ExternalLink size={16}/>
+                                            <div className="h-48 overflow-hidden">
+                                                <Image
+                                                    src={TeamPictureByEngagementID(team.id)}
+                                                    alt={team.idCompetition.nom}
+                                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                                />
+                                            </div>
+                                            <div className="p-5">
+                                                <h4 className="text-black mb-2">{team.idCompetition.nom}</h4>
+                                                <div className="flex flex-wrap gap-2 justify-between">
+                                                    <Badge className="bg-red-600 text-white hover:bg-red-700">
+                                                        {team.idCompetition.code}
+                                                    </Badge>
+                                                    <div
+                                                        className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors">
+                                                        <span>Voir les détails</span>
+                                                        <ExternalLink size={16}/>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         </Link>
                                     </motion.div>
                                 ))}

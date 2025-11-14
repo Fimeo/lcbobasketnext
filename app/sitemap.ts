@@ -1,4 +1,4 @@
-import type { MetadataRoute } from 'next'
+import type {MetadataRoute} from 'next'
 import {GENERAL_INFO} from "@/data/const";
 import {PATHS} from "@/data/routes";
 
